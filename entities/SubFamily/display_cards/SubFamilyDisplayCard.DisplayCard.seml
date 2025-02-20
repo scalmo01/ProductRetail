@@ -1,0 +1,19 @@
+_package: entities.SubFamily.display_cards
+_type: DisplayCard
+_name: SubFamilyDisplayCard
+entity: entities.SubFamily.SubFamily
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageSourceType: URL
+avatarImageValue: images://gs-retail/hierarchy-subfamily.svg
+avatarImageValueInterpreter: LITERAL
+default: true
+primaryImageAlign: MIDDLE_CENTER
+primaryImageFallbackSourceType: URL
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageMode: FIT
+primaryImageSourceType: URL
+primaryImageValueInterpreter: SEMQL
+primaryTextExpression: Name
+secondaryTextExpression: Family.Name
+

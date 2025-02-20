@@ -1,0 +1,249 @@
+_package: entities.Product.collection_views
+_type: CollectionView
+_name: ProductCollectionErrors
+entity: entities.Product.Product
+default: false
+gridAllowed: true
+gridColumns: 6
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: false
+listItemLines: 2
+listShowDisplayCardAvatar: true
+listShowDivider: false
+tableAllowed: true
+tableDisplayCardColumnLabel: Product
+tableRowLines: 2
+tableShowDisplayCard: false
+displayCard: entities.Product.display_cards.ProductDisplayCard
+tableColumns:
+  - _type: TableColumn
+    _name: ImageURL
+    columnAlign: LEFT
+    componentName: semImageField
+    documentationInterpreter: LITERAL
+    posInParent: 5
+    useCustomLabel: false
+    value: ImageURL
+    dataType: STRING
+    visibleByDefault: true
+    componentProperties:
+      - _name: imageMode
+        _type: ComponentProperty
+        dataType: STRING
+        value: fit
+        valueInterpreter: LITERAL
+      - _name: showFullSizeOnClick
+        _type: ComponentProperty
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+      - _name: imageSourceType
+        _type: ComponentProperty
+        dataType: STRING
+        value: url
+        valueInterpreter: LITERAL
+      - _name: imageAlign
+        _type: ComponentProperty
+        dataType: STRING
+        value: middle-center
+        valueInterpreter: LITERAL
+  - _type: TableColumn
+    _name: Material
+    columnAlign: LEFT
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    posInParent: 13
+    useCustomLabel: false
+    value: Material
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: HeelHeight
+    columnAlign: LEFT
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    posInParent: 15
+    useCustomLabel: false
+    value: HeelHeight
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: ConstraintName
+    columnAlign: LEFT
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    posInParent: 3
+    useCustomLabel: false
+    value: ConstraintName
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: ErrorStatus
+    columnAlign: LEFT
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    posInParent: 0
+    useCustomLabel: false
+    value: ErrorStatus
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: FDN_SubFamily
+    columnAlign: LEFT
+    componentName: semReferenceField
+    documentationInterpreter: LITERAL
+    label: Sub Family
+    posInParent: 10
+    useCustomLabel: true
+    value: FDN_SubFamily
+    dataType: STRING
+    visibleByDefault: true
+    referencedEntity: entities.SubFamily.SubFamily
+    componentProperties:
+      - _name: displayType
+        _type: ComponentProperty
+        dataType: STRING
+        value: hyperlink
+        valueInterpreter: LITERAL
+  - _type: TableColumn
+    _name: FDN_Brand
+    columnAlign: LEFT
+    componentName: semReferenceField
+    documentationInterpreter: LITERAL
+    label: Brand
+    posInParent: 11
+    useCustomLabel: true
+    value: FDN_Brand
+    dataType: STRING
+    visibleByDefault: true
+    referencedEntity: entities.Brand.Brand
+    componentProperties:
+      - _name: displayType
+        _type: ComponentProperty
+        dataType: STRING
+        value: hyperlink
+        valueInterpreter: LITERAL
+  - _type: TableColumn
+    _name: ClosureType
+    columnAlign: LEFT
+    componentName: semMenuField
+    documentationInterpreter: LITERAL
+    posInParent: 16
+    useCustomLabel: false
+    value: ClosureType
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: SalesUnit
+    columnAlign: LEFT
+    componentName: semMenuField
+    documentationInterpreter: LITERAL
+    posInParent: 12
+    useCustomLabel: false
+    value: SalesUnit
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: ID
+    columnAlign: LEFT
+    componentName: semIdField
+    documentationInterpreter: LITERAL
+    posInParent: 7
+    useCustomLabel: false
+    value: ID
+    dataType: LONG_INTEGER
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: ConstraintType
+    columnAlign: LEFT
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    posInParent: 4
+    useCustomLabel: false
+    value: ConstraintType
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: BatchID
+    columnAlign: LEFT
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    posInParent: 1
+    useCustomLabel: false
+    value: BatchID
+    dataType: LONG_INTEGER
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: CareInstructions
+    columnAlign: LEFT
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    posInParent: 17
+    useCustomLabel: false
+    value: CareInstructions
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: Name
+    columnAlign: LEFT
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    posInParent: 6
+    useCustomLabel: false
+    value: Name
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: Origin
+    columnAlign: LEFT
+    componentName: semMenuField
+    documentationInterpreter: LITERAL
+    posInParent: 14
+    useCustomLabel: false
+    value: Origin
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: FDN_Family
+    columnAlign: LEFT
+    componentName: semReferenceField
+    documentationInterpreter: LITERAL
+    label: Family
+    posInParent: 9
+    useCustomLabel: true
+    value: FDN_Family
+    dataType: STRING
+    visibleByDefault: true
+    referencedEntity: entities.Family.Family
+    componentProperties:
+      - _name: displayType
+        _type: ComponentProperty
+        dataType: STRING
+        value: hyperlink
+        valueInterpreter: LITERAL
+  - _type: TableColumn
+    _name: Description
+    columnAlign: LEFT
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    posInParent: 8
+    useCustomLabel: false
+    value: Description
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: OriginalBatchID
+    columnAlign: LEFT
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    posInParent: 2
+    useCustomLabel: false
+    value: OriginalBatchID
+    dataType: LONG_INTEGER
+    visibleByDefault: true
+
+
+
+

@@ -1,0 +1,51 @@
+_package: entities.Size.business_views
+_type: BusinessView
+_name: Sizes
+entity: entities.Size.Size
+displayRootNodeAs: ICON_LABEL
+enableHierarchyView: false
+filter: 1 = 1
+iconUrl: images://mdi/format-size.svg
+label: Size
+rootLabel: Size
+rootPluralLabel: Size
+rootDescription: ''
+useHierarchyOnOpen: false
+visible: true
+rootBusinessViewEntity: entities.Size.business_views.Sizes.Size
+businessViewEntities:
+  - entity: entities.Size.Size
+    _type: BusinessViewEntity
+    _name: Size
+    displayRecordCount: ALWAYS
+    enableUserDefinedSort: true
+    gridAllowed: true
+    listAllowed: true
+    outlineVisible: false
+    overrideDefaultSort: true
+    sortExpression: FDN_Family, lpad(SizeUS , 2, '0')
+    tableAllowed: true
+    actionSet: entities.Size.action_sets.SizeActions
+    collection: entities.Size.collection_views.SizeCollection
+    form: entities.Size.forms.SizeForm
+    businessEntitySearchConfigs:
+      - _name: FormConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: BY_FORM
+        enabled: true
+      - _name: AdvancedConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: ADVANCED
+        enabled: true
+      - _name: TextConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: TEXT
+        enabled: true
+      - _name: SemqlConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: SEMQL
+        enabled: true
+    referenceAttributeNavigationConfigs:
+      - formField: entities.Size.forms.SizeForm.FDN_Family
+        form: entities.Family.forms.FamilyBrowsingForm
+        navigationMode: MODAL_FORM

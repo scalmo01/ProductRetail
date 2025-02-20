@@ -1,0 +1,36 @@
+_package: list_of_values
+_type: LOVType
+_name: Countries
+label: Countries
+description: ''
+length: 128
+lengthModifiable: false
+validationLabel: ''
+lovValues:
+  - label: USA
+    description: ''
+    imageUrl: images://gs-retail/us.png
+    code: USA
+  - label: Canada
+    description: ''
+    imageUrl: images://gs-retail/ca.png
+    code: Canada
+  - label: Italy
+    description: ''
+    code: Italy
+  - label: France
+    description: ''
+    imageUrl: images://gs-retail/fr.png
+    code: France
+  - label: China
+    description: ''
+    imageUrl: images://gs-retail/cn.png
+    code: China
+  - label: Mexico
+    description: ''
+    imageUrl: images://gs-retail/mx.png
+    code: Mexico
+  - label: Vietnam
+    description: ''
+    imageUrl: images://gs-retail/vn.png
+    code: Vietnam

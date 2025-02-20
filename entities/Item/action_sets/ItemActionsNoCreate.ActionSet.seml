@@ -1,0 +1,36 @@
+_package: entities.Item.action_sets
+_type: ActionSet
+entity: entities.Item.Item
+_name: ItemActionsNoCreate
+label: Item Actions No Create
+defaultActionSet: false
+description: ''
+actions:
+  - _type: BrowseGraphAction
+    _name: BrowseGraph
+    label: Browse Graph
+    description: ''
+    useCustomLabel: false
+    waitDialogEnabled: false
+  - _type: EditAction
+    _name: Edit_EditItems
+    label: Edit_Edit Items
+    availableForErrorData: false
+    availableForGoldenData: true
+    availableForMasterData: false
+    description: ''
+    itemsLimit: 1000
+    multipleSelectionAllowed: true
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Item.steppers.EditItems
+  - _type: MassUpdateAction
+    _name: MassUpdate_EditItems
+    label: Mass Update_Edit Items
+    availableForErrorData: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    description: ''
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Item.steppers.EditItems

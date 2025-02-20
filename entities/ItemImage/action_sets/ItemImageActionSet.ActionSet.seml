@@ -1,0 +1,62 @@
+_package: entities.ItemImage.action_sets
+_type: ActionSet
+_name: ItemImageActionSet
+defaultActionSet: true
+description: ''
+label: Item Image Action Set
+entity: entities.ItemImage.ItemImage
+actions:
+  - _type: ExportAction
+    _name: Export
+    label: Export
+    description: ''
+    useCustomLabel: false
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: Import
+    label: Import
+    description: ''
+    allowOtherPublishers: true
+    defaultPublisher: ''
+    importMode: CREATE_AND_UPDATE
+    importedRecordType: GOLDEN
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.ItemImage.steppers.EditItemImage
+  - _type: BrowseGraphAction
+    _name: BrowseGraph
+    label: Browse Graph
+    description: ''
+    useCustomLabel: false
+    waitDialogEnabled: false
+  - _type: CreateAction
+    _name: Create
+    label: Create_Edit Item Image
+    allowOtherPublishers: true
+    createMultiple: false
+    createdRecordType: GOLDEN
+    description: ''
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.ItemImage.steppers.EditItemImage
+  - _type: EditAction
+    _name: Edit
+    label: Edit_Edit Item Image
+    availableForErrorData: false
+    availableForGoldenData: true
+    availableForMasterData: false
+    description: ''
+    itemsLimit: 1000
+    multipleSelectionAllowed: true
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.ItemImage.steppers.EditItemImage
+  - _type: CopyAction
+    _name: Copy
+    label: Copy
+    description: ''
+    itemsLimit: 1000
+    multipleSelectionAllowed: true
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.ItemImage.steppers.EditItemImage

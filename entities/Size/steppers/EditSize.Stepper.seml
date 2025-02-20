@@ -1,0 +1,112 @@
+_package: entities.Size.steppers
+_type: Stepper
+_name: EditSize
+entity: entities.Size.Size
+label: Edit Size
+rootCollectionStep: entities.Size.steppers.EditSize.Sizes
+stepperFinishValidations:
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: entities.Size.Size.SizeUS
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: FOREIGN
+    attribute: references.SizeHasFamily.Family
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: references.SizeHasFamily.Family
+steps:
+  - _type: FormStep
+    _name: Size
+    canFinishSubLevel: true
+    enableMasterValuePicking: false
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    label: Size
+    formTab: entities.Size.forms.SizeForm.Size
+    parentCollectionStep: entities.Size.steppers.EditSize.Sizes
+    formStepValidations:
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: references.SizeHasFamily.Family
+      - _type: FormStepValidation
+        validationType: FOREIGN
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: references.SizeHasFamily.Family
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: entities.Size.Size.SizeUS
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: references.SizeHasFamily.Family
+      - _type: StepTransitionValidation
+        validationType: MANDATORY
+        onStepExit: BLOCK
+        attribute: entities.Size.Size.SizeUS
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: FOREIGN
+        attribute: references.SizeHasFamily.Family
+  - _type: CollectionStep
+    _name: Sizes
+    canFinishSubLevel: true
+    childDeleteType: HARD_DELETE
+    childImportModeOnParentEdit: CREATE_AND_UPDATE
+    createChildUsingManyToManyPicker: false
+    customSortEnabled: false
+    defaultDisplayType: TABLE
+    displayGridAllowed: false
+    displayListAllowed: true
+    displayTableAllowed: true
+    enableChildCopyOnParentCreate: false
+    enableChildCopyOnParentEdit: false
+    enableChildCreationOnParentCreate: true
+    enableChildCreationOnParentEdit: true
+    enableChildDeleteOnParentEdit: true
+    enableChildEditOnParentCreate: true
+    enableChildEditOnParentEdit: true
+    enableChildExport: false
+    enableChildImportOnParentCreate: true
+    enableChildImportOnParentEdit: false
+    enableChildRemoveOnParentCreate: true
+    enableChildRemoveOnParentEdit: true
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    label: Sizes
+    linear: false
+    manyToManyCustomSortEnabled: false
+    manyToManyDefaultDisplayType: TABLE
+    manyToManyDisplayGridAllowed: false
+    manyToManyDisplayListAllowed: false
+    manyToManyDisplayTableAllowed: false
+    manyToManyUserDefinedSortEnabled: false
+    skipToChildCreationOnParentCreate: true
+    skipToChildEditingOnParentEdit: true
+    useCustomCollectionLabel: false
+    userDefinedSortEnabled: false
+    collectionView: entities.Size.collection_views.SizeCollection
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: entities.Size.Size.SizeUS
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: references.SizeHasFamily.Family
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: FOREIGN
+        attribute: references.SizeHasFamily.Family
+

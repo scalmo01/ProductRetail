@@ -1,0 +1,52 @@
+_package: entities.SubFamily
+_type: Entity
+_name: SubFamily
+label: Subfamily
+dataEntryAllowed: true
+enableDelete: false
+entityType: BASIC
+historizeGolden: false
+historizeMaster: false
+iconUrl: images://gs-retail/hierarchy-subfamily.svg
+physicalTableName: SUB_FAMILY
+pluralLabel: Subfamilies
+pkAttributes:
+  - _type: PKAttribute
+    _name: ID
+    fuzzyMatchedEntityGoldenIdGenerationType: SEQUENCE
+    fuzzyMatchedEntityGoldenIdSequenceStartsWith: 1
+    goldenAttribute: true
+    i18ned: false
+    idExpression: SUBSTR(FID_Family || '.' || UPPER( SEM_NORMALIZE( Name ) ) , 1 ,
+      128)
+    idGenerationType: SEMQL
+    idSequenceStartsWith: 1
+    label: ID
+    length: 128
+    mandatory: true
+    multiValued: false
+    physicalColName: ID
+    precision: 0
+    scale: 0
+    searchable: false
+    valueSeparator: ','
+    dataType: String
+atomicAttributes:
+  - _type: AtomicAttribute
+    _name: Name
+    lovValidationScope: PRE_CONSO
+    goldenAttribute: true
+    i18ned: false
+    label: Name
+    length: 128
+    mandatory: true
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    physicalColName: NAME
+    precision: 0
+    scale: 0
+    searchable: true
+    valueSeparator: ','
+    dataType: String
+

@@ -1,0 +1,100 @@
+_package: entities.Family
+_type: Entity
+_name: Family
+entityType: BASIC
+label: Family
+pluralLabel: Families
+description: Defines all families of the products we are selling. Families are marketing
+  buckets that appear in the taxonomy of the e-commerce web site.
+documentation: Defines all families of the products we are selling. Families are marketing
+  buckets that appear in the taxonomy of the e-commerce web site.
+enableDelete: false
+historizeGolden: false
+historizeMaster: false
+physicalTableName: FAMILY
+dataEntryAllowed: true
+pkAttributes:
+  - _type: PKAttribute
+    _name: ID
+    label: ID
+    physicalColName: ID
+    description: ID of the family. This ID is automatically generated based on the
+      name of the family.
+    documentation: ID of the family. This ID is automatically generated based on the
+      name of the family.
+    dataType: String
+    fuzzyMatchedEntityGoldenIdGenerationType: SEQUENCE
+    fuzzyMatchedEntityGoldenIdSequenceStartsWith: 1
+    goldenAttribute: true
+    i18ned: false
+    idExpression: SUBSTR( UPPER( SEM_NORMALIZE( Name ) ) , 1, 128)
+    idGenerationType: SEMQL
+    idSequenceStartsWith: 1
+    length: 128
+    mandatory: true
+    multiValued: false
+    precision: 0
+    scale: 0
+    searchable: false
+    valueSeparator: ','
+atomicAttributes:
+  - _type: AtomicAttribute
+    _name: Name
+    label: Name
+    dataType: String
+    description: Name of the family as it should appear in the e-commerce platform.
+      This name should be unique and it is used to derive the family ID.
+    documentation: Name of the family as it should appear in the e-commerce platform.
+      This name should be unique and it is used to derive the family ID.
+    goldenAttribute: true
+    i18ned: false
+    lovValidationScope: PRE_CONSO
+    mandatory: true
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    physicalColName: NAME
+    valueSeparator: ','
+    length: 128
+  - _type: AtomicAttribute
+    _name: AvatarURL
+    label: Avatar
+    documentation: Avatars and thumbnails represent entities or content, either literally
+      through photography or conceptually through illustration. Generally, they are
+      tap targets that lead to a primary view of the entity or content.
+    description: Avatars and thumbnails represent entities or content, either literally
+      through photography or conceptually through illustration. Generally, they are
+      tap targets that lead to a primary view of the entity or content.
+    dataType: user_defined_types.URLString
+    goldenAttribute: true
+    i18ned: false
+    lovValidationScope: PRE_CONSO
+    mandatory: false
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    physicalColName: AVATAR_URL
+    valueSeparator: ','
+    length: 2000
+    precision: 0
+    scale: 0
+    searchable: true
+  - _type: AtomicAttribute
+    _name: ImageURL
+    label: Image
+    documentation: URL for the image of the product family
+    description: URL for the image of the product family
+    dataType: user_defined_types.URLString
+    goldenAttribute: true
+    i18ned: false
+    lovValidationScope: PRE_CONSO
+    mandatory: false
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    physicalColName: IMAGE_URL
+    valueSeparator: ','
+    length: 2000
+    precision: 0
+    scale: 0
+    searchable: true

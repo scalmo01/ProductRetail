@@ -1,0 +1,86 @@
+_package: entities.Item.business_views
+_type: BusinessView
+_name: Items
+label: Items
+entity: entities.Item.Item
+description: ''
+displayRootNodeAs: ICON_LABEL
+enableHierarchyView: false
+filter: 1 = 1
+iconUrl: images://mdi/basket-fill.svg
+rootLabel: Item
+rootPluralLabel: Items
+useHierarchyOnOpen: false
+visible: true
+rootBusinessViewEntity: entities.Item.business_views.Items.Item
+rootDescription: ''
+businessViewEntities:
+  - _name: ItemImage
+    _type: BusinessViewEntity
+    displayRecordCount: ALWAYS
+    enableUserDefinedSort: true
+    gridAllowed: true
+    listAllowed: true
+    outlineVisible: false
+    overrideDefaultSort: false
+    sortExpression: ''
+    tableAllowed: true
+    collection: entities.ItemImage.collection_views.ItemImageCollection
+    entity: entities.ItemImage.ItemImage
+    form: entities.ItemImage.forms.ItemImageBrowsingForm
+    referenceAttributeNavigationConfigs:
+      - formField: entities.ItemImage.forms.ItemImageBrowsingForm.FDN_Item
+        navigationMode: MODAL_FORM
+        form: entities.Item.forms.ItemBrowsingForm
+  - _name: Item
+    _type: BusinessViewEntity
+    displayRecordCount: ALWAYS
+    enableUserDefinedSort: true
+    gridAllowed: true
+    listAllowed: true
+    outlineVisible: false
+    overrideDefaultSort: true
+    sortExpression: Product.Name, Color, lpad(Size.SizeUS, 2, '0')
+    tableAllowed: true
+    actionSet: entities.Item.action_sets.ItemActionsNoCreate
+    collection: entities.Item.collection_views.ItemCollection
+    entity: entities.Item.Item
+    form: entities.Item.forms.ItemBrowsingForm
+    businessEntitySearchConfigs:
+      - _name: SemqlConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: SEMQL
+        enabled: true
+      - _name: FormConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: BY_FORM
+        enabled: true
+      - _name: AdvancedConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: ADVANCED
+        enabled: true
+      - _name: TextConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: TEXT
+        enabled: true
+    referenceAttributeNavigationConfigs:
+      - formField: entities.Item.forms.ItemBrowsingForm.FDN_Product
+        navigationMode: BUSINESS_OBJECT_VIEW
+        businessView: entities.Product.business_views.Products
+    transitions:
+      - _name: Images
+        _type: BOViewTransition
+        description: ''
+        displayFormTabAs: ICON_LABEL
+        displayTransitionNodeAs: ICON_LABEL
+        enableHierarchy: '0'
+        enableHierarchyInterpreter: LITERAL
+        expandHierarchyByDefault: false
+        filter: 1 = 1
+        iconUrl: images://mdi/folder-multiple-image.svg
+        transitionPath: Images
+        transitionType: FULLY_QUALIFIED
+        transitionVisible: '1'
+        transitionVisibleInterpreter: LITERAL
+        useCustomLabel: false
+        targetBusinessViewEntity: entities.Item.business_views.Items.ItemImage

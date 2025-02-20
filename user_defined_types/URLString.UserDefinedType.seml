@@ -1,0 +1,11 @@
+_package: user_defined_types
+_type: UserDefinedType
+_name: URLString
+label: URL String
+length: 2000
+lengthModifiable: false
+precision: 0
+precisionModifiable: false
+scale: 0
+scaleModifiable: false
+dataType: String

@@ -1,0 +1,21 @@
+_package: entities.Item.display_cards
+_type: DisplayCard
+_name: ItemDisplayCard
+entity: entities.Item.Item
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageSourceType: URL
+avatarImageValue: COALESCE( MainImageURL, Product.ImageURL )
+avatarImageValueInterpreter: SEMQL
+default: true
+description: ''
+primaryImageAlign: MIDDLE_CENTER
+primaryImageFallbackSourceType: URL
+primaryImageFallbackValue: ''
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageMode: FIT
+primaryImageSourceType: URL
+primaryImageValue: COALESCE( MainImageURL, Product.ImageURL )
+primaryImageValueInterpreter: SEMQL
+primaryTextExpression: UPC
+secondaryTextExpression: FDN_Product || ' (' || Size.SizeUS || ', ' || Color || ')'

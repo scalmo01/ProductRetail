@@ -1,0 +1,101 @@
+_package: entities.ItemImage.steppers
+_type: Stepper
+_name: EditItemImage
+label: Edit Item Image
+entity: entities.ItemImage.ItemImage
+rootCollectionStep: entities.ItemImage.steppers.EditItemImage.ItemImages
+stepperFinishValidations:
+  - _type: StepperFinishValidation
+    onStepperFinish: SKIP
+    validationType: MANDATORY
+    attribute: references.ItemImageHasItem.Item
+  - _type: StepperFinishValidation
+    onStepperFinish: SKIP
+    validationType: FOREIGN
+    attribute: references.ItemImageHasItem.Item
+steps:
+  - _type: CollectionStep
+    _name: ItemImages
+    canFinishSubLevel: true
+    childDeleteType: HARD_DELETE
+    childImportModeOnParentEdit: CREATE_AND_UPDATE
+    createChildUsingManyToManyPicker: false
+    customSortEnabled: false
+    defaultDisplayType: TABLE
+    displayGridAllowed: true
+    displayListAllowed: true
+    displayTableAllowed: true
+    enableChildCopyOnParentCreate: true
+    enableChildCopyOnParentEdit: true
+    enableChildCreationOnParentCreate: true
+    enableChildCreationOnParentEdit: true
+    enableChildDeleteOnParentEdit: true
+    enableChildEditOnParentCreate: true
+    enableChildEditOnParentEdit: true
+    enableChildExport: false
+    enableChildImportOnParentCreate: true
+    enableChildImportOnParentEdit: false
+    enableChildRemoveOnParentCreate: true
+    enableChildRemoveOnParentEdit: true
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    label: Item Images
+    linear: false
+    manyToManyCustomSortEnabled: false
+    manyToManyDefaultDisplayType: TABLE
+    manyToManyDisplayGridAllowed: false
+    manyToManyDisplayListAllowed: false
+    manyToManyDisplayTableAllowed: false
+    manyToManyUserDefinedSortEnabled: false
+    skipToChildCreationOnParentCreate: true
+    skipToChildEditingOnParentEdit: true
+    useCustomCollectionLabel: false
+    userDefinedSortEnabled: false
+    collectionView: entities.ItemImage.collection_views.ItemImageCollection
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ItemImageHasItem.Item
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ItemImageHasItem.Item
+  - _type: FormStep
+    _name: ItemImage
+    canFinishSubLevel: true
+    enableMasterValuePicking: false
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    label: Item Image
+    formTab: entities.ItemImage.forms.ItemImageEditingForm.ItemImage
+    parentCollectionStep: entities.ItemImage.steppers.EditItemImage.ItemImages
+    formStepValidations:
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: references.ItemImageHasItem.Item
+      - _type: FormStepValidation
+        validationType: FOREIGN
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: references.ItemImageHasItem.Item
+    referenceFormFieldConfigs:
+      - enableCreateReference: false
+        enableUserSort: true
+        fdnFormField: entities.ItemImage.forms.ItemImageEditingForm.FDN_Item
+        referencePickerType: AUTO_COMPLETE
+        referencePickerCollectionView: entities.Item.collection_views.ItemCollection
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ItemImageHasItem.Item
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ItemImageHasItem.Item
+

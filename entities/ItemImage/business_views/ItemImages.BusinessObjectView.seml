@@ -1,0 +1,52 @@
+_package: entities.ItemImage.business_views
+_type: BusinessView
+_name: ItemImages
+label: Item Images
+entity: entities.ItemImage.ItemImage
+description: ''
+displayRootNodeAs: ICON_LABEL
+enableHierarchyView: false
+filter: 1 = 1
+iconUrl: images://mdi/folder-multiple-image.svg
+rootLabel: Item Image
+rootPluralLabel: Item Images
+useHierarchyOnOpen: false
+visible: true
+rootBusinessViewEntity: entities.ItemImage.business_views.ItemImages.ItemImage
+rootDescription: ''
+businessViewEntities:
+  - _name: ItemImage
+    _type: BusinessViewEntity
+    displayRecordCount: NEVER
+    enableUserDefinedSort: true
+    gridAllowed: true
+    listAllowed: true
+    outlineVisible: false
+    overrideDefaultSort: false
+    tableAllowed: true
+    sortExpression: ''
+    actionSet: entities.ItemImage.action_sets.ItemImageNoCreate
+    collection: entities.ItemImage.collection_views.ItemImageCollection
+    entity: entities.ItemImage.ItemImage
+    form: entities.ItemImage.forms.ItemImageBrowsingForm
+    businessEntitySearchConfigs:
+      - _name: FormConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: BY_FORM
+        enabled: true
+      - _name: AdvancedConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: ADVANCED
+        enabled: true
+      - _name: SemqlConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: SEMQL
+        enabled: true
+      - _name: TextConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: TEXT
+        enabled: true
+    referenceAttributeNavigationConfigs:
+      - formField: entities.ItemImage.forms.ItemImageBrowsingForm.FDN_Item
+        form: entities.Item.forms.ItemBrowsingForm
+        navigationMode: MODAL_FORM

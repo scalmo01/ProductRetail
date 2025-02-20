@@ -1,0 +1,78 @@
+_package: entities.Family.collection_views
+_type: CollectionView
+_name: FamilyCollection
+default: true
+entity: entities.Family.Family
+gridAllowed: true
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 2
+listShowDisplayCardAvatar: true
+listShowDivider: false
+tableAllowed: true
+tableDisplayCardColumnLabel: Family
+tableRowLines: 2
+tableShowDisplayCard: true
+displayCard: entities.Family.display_cards.FamilyDisplayCard
+tableColumns:
+  - _type: TableColumn
+    _name: ImageURL
+    columnAlign: LEFT
+    componentName: semImageField
+    documentationInterpreter: LITERAL
+    posInParent: 0
+    useCustomLabel: false
+    value: ImageURL
+    visibleByDefault: true
+    dataType: STRING
+    componentProperties:
+      - _name: showFullSizeOnClick
+        _type: ComponentProperty
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+      - _name: imageAlign
+        _type: ComponentProperty
+        dataType: STRING
+        value: middle-center
+        valueInterpreter: LITERAL
+      - _name: imageMode
+        _type: ComponentProperty
+        dataType: STRING
+        value: fit
+        valueInterpreter: LITERAL
+      - _name: fallbackImageType
+        _type: ComponentProperty
+        dataType: STRING
+        value: url
+        valueInterpreter: LITERAL
+      - _name: imageSourceType
+        _type: ComponentProperty
+        dataType: STRING
+        value: url
+        valueInterpreter: LITERAL
+  - _type: TableColumn
+    _name: Name
+    columnAlign: LEFT
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    documentation: ''
+    posInParent: 1
+    useCustomLabel: false
+    value: Name
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: ID
+    columnAlign: LEFT
+    componentName: semIdField
+    documentationInterpreter: LITERAL
+    documentation: ''
+    posInParent: 2
+    useCustomLabel: false
+    value: ID
+    dataType: STRING
+    visibleByDefault: true

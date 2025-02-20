@@ -1,0 +1,74 @@
+_package: model_priv_grants
+_type: ModelPrivGrant
+_name: BusinessUser
+allowApiPublishingAsUser: false
+allowDataQualityDocumentation: false
+allowEnrichmentDocumentation: false
+dataAdminRole: false
+integrationWsRole: false
+label: Business User
+roleName: BusinessUser
+entityPrivGrants:
+  - entity: entities.Item.Item
+    _name: Item
+    _type: EntityPrivGrant
+    checkoutAllowed: true
+    createAllowed: true
+    defaultAccessType: READ_WRITE
+    deleteAllowed: false
+    exportAllowed: true
+    removeAllowed: false
+  - entity: entities.Size.Size
+    _name: Size
+    _type: EntityPrivGrant
+    checkoutAllowed: true
+    createAllowed: true
+    defaultAccessType: READ_WRITE
+    deleteAllowed: false
+    exportAllowed: true
+    removeAllowed: false
+  - entity: entities.Brand.Brand
+    _name: Brand
+    _type: EntityPrivGrant
+    checkoutAllowed: true
+    createAllowed: true
+    defaultAccessType: READ_WRITE
+    deleteAllowed: false
+    exportAllowed: true
+    removeAllowed: false
+  - entity: entities.Family.Family
+    _name: Family
+    _type: EntityPrivGrant
+    checkoutAllowed: true
+    createAllowed: true
+    defaultAccessType: READ_WRITE
+    deleteAllowed: false
+    exportAllowed: true
+    removeAllowed: false
+  - entity: entities.Product.Product
+    _name: Product
+    _type: EntityPrivGrant
+    checkoutAllowed: true
+    createAllowed: true
+    defaultAccessType: READ_WRITE
+    deleteAllowed: false
+    exportAllowed: true
+    removeAllowed: false
+  - entity: entities.ItemImage.ItemImage
+    _name: ItemImage
+    _type: EntityPrivGrant
+    checkoutAllowed: true
+    createAllowed: true
+    defaultAccessType: READ_WRITE
+    deleteAllowed: false
+    exportAllowed: true
+    removeAllowed: false
+  - entity: entities.SubFamily.SubFamily
+    _name: SubFamily
+    _type: EntityPrivGrant
+    checkoutAllowed: true
+    createAllowed: true
+    defaultAccessType: READ_WRITE
+    deleteAllowed: false
+    exportAllowed: true
+    removeAllowed: false

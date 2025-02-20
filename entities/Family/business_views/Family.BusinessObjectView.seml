@@ -1,0 +1,117 @@
+_package: entities.Family.business_views
+_type: BusinessView
+_name: Family
+label: Family
+description: ''
+displayRootNodeAs: ICON_LABEL
+enableHierarchyView: false
+filter: 1 = 1
+iconUrl: images://mdi/people.svg
+rootLabel: Family
+rootPluralLabel: Families
+useHierarchyOnOpen: false
+visible: true
+rootBusinessViewEntity: entities.Family.business_views.Family.Family
+entity: entities.Family.Family
+rootDescription: ''
+businessViewEntities:
+  - _name: Family
+    _type: BusinessViewEntity
+    collection: entities.Family.collection_views.FamilyCollection
+    displayRecordCount: ALWAYS
+    enableUserDefinedSort: true
+    entity: entities.Family.Family
+    form: entities.Family.forms.FamilyBrowsingForm
+    actionSet: entities.Family.action_sets.FamilyActions
+    gridAllowed: true
+    listAllowed: true
+    outlineVisible: false
+    overrideDefaultSort: false
+    sortExpression: ''
+    tableAllowed: true
+    businessEntitySearchConfigs:
+      - _name: FormConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: BY_FORM
+        enabled: true
+      - _name: AdvancedConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: ADVANCED
+        enabled: true
+      - _name: TextConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: TEXT
+        enabled: true
+      - _name: SemqlConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: SEMQL
+        enabled: true
+    transitions:
+      - _name: SubFamily
+        _type: BOViewTransition
+        enableHierarchyInterpreter: LITERAL
+        description: ''
+        displayFormTabAs: ICON_LABEL
+        displayTransitionNodeAs: ICON_LABEL
+        enableHierarchy: '0'
+        expandHierarchyByDefault: false
+        filter: 1 = 1
+        iconUrl: images://gs-retail/file-tree-subfamily.svg
+        targetBusinessViewEntity: entities.Family.business_views.Family.SubFamily
+        transitionPath: SubFamily
+        transitionType: FULLY_QUALIFIED
+        transitionVisible: '1'
+        transitionVisibleInterpreter: LITERAL
+        useCustomLabel: false
+      - _name: Sizes
+        _type: BOViewTransition
+        description: ''
+        displayFormTabAs: ICON_LABEL
+        displayTransitionNodeAs: ICON_LABEL
+        enableHierarchy: '0'
+        enableHierarchyInterpreter: LITERAL
+        expandHierarchyByDefault: false
+        filter: 1 = 1
+        iconUrl: images://mdi/format-size.svg
+        transitionPath: Sizes
+        transitionType: FULLY_QUALIFIED
+        transitionVisible: '1'
+        transitionVisibleInterpreter: LITERAL
+        useCustomLabel: false
+        targetBusinessViewEntity: entities.Family.business_views.Family.Size
+  - _name: Size
+    _type: BusinessViewEntity
+    displayRecordCount: ALWAYS
+    enableUserDefinedSort: true
+    gridAllowed: true
+    listAllowed: true
+    outlineVisible: false
+    overrideDefaultSort: true
+    sortExpression: lpad(SizeUS , 2, '0')
+    tableAllowed: true
+    actionSet: entities.Size.action_sets.SizeActions
+    collection: entities.Size.collection_views.SizeCollection
+    entity: entities.Size.Size
+    form: entities.Size.forms.SizeForm
+    referenceAttributeNavigationConfigs:
+      - formField: entities.Size.forms.SizeForm.FDN_Family
+        form: entities.Family.forms.FamilyBrowsingForm
+        navigationMode: MODAL_FORM
+  - _name: SubFamily
+    _type: BusinessViewEntity
+    displayRecordCount: ALWAYS
+    enableUserDefinedSort: true
+    gridAllowed: true
+    listAllowed: true
+    outlineVisible: false
+    overrideDefaultSort: false
+    sortExpression: ''
+    tableAllowed: true
+    actionSet: entities.SubFamily.action_sets.SubFamilyActions
+    collection: entities.SubFamily.collection_views.SubFamilyCollection
+    entity: entities.SubFamily.SubFamily
+    form: entities.SubFamily.forms.SubFamilyEditAndBrowsing
+    referenceAttributeNavigationConfigs:
+      - formField: entities.SubFamily.forms.SubFamilyEditAndBrowsing.FDN_Family
+        form: entities.Family.forms.FamilyBrowsingForm
+        navigationMode: MODAL_FORM

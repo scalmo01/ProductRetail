@@ -1,0 +1,123 @@
+_package: entities.Item.collection_views
+_type: CollectionView
+_name: ItemCollection
+entity: entities.Item.Item
+default: true
+description: ''
+gridAllowed: true
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 2
+listAllowed: true
+listItemLines: 2
+listShowDisplayCardAvatar: true
+listShowDivider: false
+tableAllowed: true
+tableDisplayCardColumnLabel: Item
+tableRowLines: 2
+tableShowDisplayCard: true
+displayCard: entities.Item.display_cards.ItemDisplayCard
+tableColumns:
+  - _type: TableColumn
+    _name: Color
+    columnAlign: LEFT
+    componentName: semMenuField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 2
+    useCustomLabel: false
+    value: Color
+    dataType: STRING
+    visibleByDefault: true
+    componentProperties:
+      - _name: textColor
+        _type: ComponentProperty
+        dataType: STRING
+        value: case when lower(Color) = 'white' then 'grey' else 'css:' || Color end
+        valueInterpreter: SEMQL
+  - _type: TableColumn
+    _name: FDN_Product
+    columnAlign: LEFT
+    componentName: semReferenceField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    label: Product
+    posInParent: 6
+    useCustomLabel: true
+    value: FDN_Product
+    dataType: STRING
+    visibleByDefault: true
+    referencedEntity: entities.Product.Product
+    componentProperties:
+      - _name: displayType
+        _type: ComponentProperty
+        dataType: STRING
+        value: hyperlink
+        valueInterpreter: LITERAL
+  - _type: TableColumn
+    _name: MainImageURL
+    columnAlign: LEFT
+    componentName: semTextField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 5
+    useCustomLabel: false
+    value: MainImageURL
+    dataType: STRING
+    visibleByDefault: false
+  - _type: TableColumn
+    _name: FDN_Size
+    columnAlign: LEFT
+    componentName: semReferenceField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    label: Size
+    posInParent: 1
+    useCustomLabel: true
+    value: FDN_Size
+    dataType: STRING
+    visibleByDefault: true
+    referencedEntity: entities.Size.Size
+    componentProperties:
+      - _name: displayType
+        _type: ComponentProperty
+        dataType: STRING
+        value: hyperlink
+        valueInterpreter: LITERAL
+  - _type: TableColumn
+    _name: UPC
+    columnAlign: LEFT
+    componentName: semIdField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 0
+    useCustomLabel: false
+    value: UPC
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: ColorDescription
+    columnAlign: LEFT
+    componentName: semTextField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    label: Color Description
+    posInParent: 4
+    useCustomLabel: true
+    value: ColorDescription
+    dataType: STRING
+    visibleByDefault: true
+
+
+
+
+
+
+

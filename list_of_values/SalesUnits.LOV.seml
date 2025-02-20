@@ -1,0 +1,20 @@
+_package: list_of_values
+_type: LOVType
+_name: SalesUnits
+label: Sales Units
+description: ''
+length: 5
+lengthModifiable: false
+precisionModifiable: false
+scaleModifiable: false
+validationLabel: ''
+lovValues:
+  - label: Piece
+    description: ''
+    code: PCE
+  - label: Pair
+    description: ''
+    code: PAIR
+  - label: Set
+    description: ''
+    code: SET

@@ -1,0 +1,18 @@
+_package: entities.Size.display_cards
+_type: DisplayCard
+_name: SizeDisplayCardMinimal
+entity: entities.Size.Size
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageSourceType: URL
+avatarImageValue: images://mdi/format-size.svg
+avatarImageValueInterpreter: LITERAL
+default: true
+primaryImageAlign: MIDDLE_CENTER
+primaryImageFallbackSourceType: URL
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageMode: FIT
+primaryImageSourceType: URL
+primaryImageValueInterpreter: LITERAL
+primaryTextExpression: SizeUS
+secondaryTextExpression: "'EU • ' || SizeEU"

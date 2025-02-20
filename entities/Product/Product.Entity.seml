@@ -1,0 +1,183 @@
+_package: entities.Product
+_type: Entity
+_name: Product
+dataEntryAllowed: true
+enableDelete: true
+entityType: BASIC
+historizeGolden: true
+historizeMaster: false
+iconUrl: images://mdi/package-variant.svg
+label: Product
+physicalTableName: PRODUCT
+pluralLabel: Products
+pkAttributes:
+  - _type: PKAttribute
+    _name: ID
+    fuzzyMatchedEntityGoldenIdGenerationType: SEQUENCE
+    fuzzyMatchedEntityGoldenIdSequenceStartsWith: 1
+    goldenAttribute: true
+    i18ned: false
+    idGenerationType: MANUAL
+    idSequenceStartsWith: 1
+    label: ID
+    length: 0
+    mandatory: true
+    multiValued: false
+    physicalColName: ID
+    precision: 38
+    scale: 0
+    valueSeparator: ','
+    dataType: LongInteger
+atomicAttributes:
+  - _type: AtomicAttribute
+    _name: HeelHeight
+    lovValidationScope: PRE_CONSO
+    goldenAttribute: true
+    i18ned: false
+    label: Heel Height (in)
+    length: 128
+    mandatory: false
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    physicalColName: HEEL_HEIGHT
+    precision: 0
+    scale: 0
+    searchable: true
+    valueSeparator: ','
+    dataType: String
+  - _type: AtomicAttribute
+    _name: Material
+    lovValidationScope: PRE_CONSO
+    goldenAttribute: true
+    i18ned: false
+    label: Material
+    length: 128
+    mandatory: true
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: NONE
+    multiValued: false
+    physicalColName: MATERIAL
+    precision: 0
+    scale: 0
+    searchable: true
+    valueSeparator: ','
+    dataType: String
+  - _type: AtomicAttribute
+    _name: Origin
+    lovValidationScope: PRE_CONSO
+    goldenAttribute: true
+    i18ned: false
+    label: Made in
+    length: 128
+    mandatory: true
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: NONE
+    multiValued: false
+    physicalColName: ORIGIN
+    searchable: true
+    valueSeparator: ','
+    dataType: list_of_values.Countries
+  - _type: AtomicAttribute
+    _name: SalesUnit
+    lovValidationScope: NONE
+    goldenAttribute: true
+    i18ned: false
+    label: Sales Unit
+    length: 5
+    mandatory: true
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: NONE
+    multiValued: false
+    physicalColName: SALES_UNIT
+    searchable: true
+    valueSeparator: ','
+    dataType: list_of_values.SalesUnits
+  - _type: AtomicAttribute
+    _name: ImageURL
+    lovValidationScope: PRE_CONSO
+    goldenAttribute: true
+    i18ned: false
+    label: Image
+    length: 2000
+    mandatory: true
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: NONE
+    multiValued: false
+    physicalColName: IMAGE_URL
+    precision: 0
+    scale: 0
+    searchable: true
+    valueSeparator: ','
+    dataType: user_defined_types.URLString
+  - _type: AtomicAttribute
+    _name: Description
+    lovValidationScope: PRE_CONSO
+    goldenAttribute: true
+    i18ned: false
+    label: Description
+    length: 4000
+    mandatory: true
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: NONE
+    multiValued: false
+    physicalColName: DESCRIPTION
+    precision: 0
+    scale: 0
+    searchable: true
+    valueSeparator: ','
+    dataType: String
+  - _type: AtomicAttribute
+    _name: CareInstructions
+    lovValidationScope: PRE_CONSO
+    goldenAttribute: true
+    i18ned: false
+    label: Care Instructions
+    length: 500
+    mandatory: true
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: NONE
+    multiValued: false
+    physicalColName: CARE_INSTRUCTIONS
+    precision: 0
+    scale: 0
+    searchable: true
+    valueSeparator: ','
+    dataType: String
+  - _type: AtomicAttribute
+    _name: Name
+    lovValidationScope: PRE_CONSO
+    description: Friendly name of a product. Use meaningful descriptions to aid SEO.
+      This is the first impression our customers have of our products.
+    documentation: Friendly name of a product. Use meaningful descriptions to aid
+      SEO. This is the first impression our customers have of our products.
+    goldenAttribute: true
+    i18ned: false
+    label: Name
+    length: 128
+    mandatory: true
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    physicalColName: NAME
+    precision: 0
+    scale: 0
+    searchable: true
+    valueSeparator: ','
+    dataType: String
+  - _type: AtomicAttribute
+    _name: ClosureType
+    lovValidationScope: PRE_CONSO
+    goldenAttribute: true
+    i18ned: false
+    label: Closure Type
+    length: 50
+    mandatory: false
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    physicalColName: CLOSURE_TYPE
+    valueSeparator: ','
+    searchable: true
+    dataType: list_of_values.ClosureTypes
+

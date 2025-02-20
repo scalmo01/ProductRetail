@@ -1,0 +1,68 @@
+_package: entities.Size.collection_views
+_type: CollectionView
+_name: SizeCollection
+entity: entities.Size.Size
+default: true
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 2
+listShowDisplayCardAvatar: true
+listShowDivider: false
+tableAllowed: true
+tableDisplayCardColumnLabel: Size
+tableRowLines: 2
+tableShowDisplayCard: true
+displayCard: entities.Size.display_cards.SizeDisplayCardMinimal
+tableColumns:
+  - _type: TableColumn
+    _name: SizeEU
+    columnAlign: LEFT
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    posInParent: 2
+    useCustomLabel: false
+    value: SizeEU
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: SizeUS
+    columnAlign: LEFT
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    posInParent: 1
+    useCustomLabel: false
+    value: SizeUS
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: ID
+    columnAlign: LEFT
+    componentName: semIdField
+    documentationInterpreter: LITERAL
+    posInParent: 3
+    useCustomLabel: false
+    value: ID
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: FDN_Family
+    columnAlign: LEFT
+    componentName: semReferenceField
+    documentationInterpreter: LITERAL
+    label: Family
+    posInParent: 0
+    useCustomLabel: true
+    value: FDN_Family
+    dataType: STRING
+    visibleByDefault: true
+    referencedEntity: entities.Family.Family
+    componentProperties:
+      - _name: displayType
+        _type: ComponentProperty
+        dataType: STRING
+        value: hyperlink
+        valueInterpreter: LITERAL

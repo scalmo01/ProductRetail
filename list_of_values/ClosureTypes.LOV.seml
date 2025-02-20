@@ -1,0 +1,30 @@
+_package: list_of_values
+_type: LOVType
+_name: ClosureTypes
+label: Closure Types
+description: ''
+length: 50
+lengthModifiable: false
+validationLabel: ''
+lovValues:
+  - label: Button
+    description: ''
+    code: Button
+  - label: No Closure
+    description: ''
+    code: None
+  - label: Strap
+    description: ''
+    code: Strap
+  - label: Zip
+    description: ''
+    code: Zip
+  - label: Buckle
+    description: ''
+    code: Buckle
+  - label: Laces
+    description: ''
+    code: Laces
+  - label: Velcro
+    description: ''
+    code: Velcro

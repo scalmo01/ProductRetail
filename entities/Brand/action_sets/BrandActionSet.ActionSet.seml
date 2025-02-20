@@ -1,0 +1,56 @@
+_package: entities.Brand.action_sets
+_type: ActionSet
+entity: entities.Brand.Brand
+_name: BrandActionSet
+label: BrandActionSet
+defaultActionSet: true
+description: ''
+actions:
+  - _type: CreateAction
+    _name: Create
+    useCustomLabel: false
+    label: Create
+    description: ''
+    createdRecordType: GOLDEN
+    allowOtherPublishers: true
+    waitDialogEnabled: false
+    createMultiple: false
+    stepper: entities.Brand.steppers.EditBrands
+  - _type: EditAction
+    _name: Edit
+    availableForErrorData: false
+    availableForMasterData: false
+    useCustomLabel: false
+    label: Edit
+    description: ''
+    multipleSelectionAllowed: true
+    itemsLimit: 1000
+    availableForGoldenData: true
+    waitDialogEnabled: false
+    stepper: entities.Brand.steppers.EditBrands
+  - _type: DeleteAction
+    _name: Delete
+    useCustomLabel: true
+    label: Delete
+    description: ''
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    availableForGoldenData: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: Import
+    useCustomLabel: false
+    label: Import
+    description: ''
+    importMode: CREATE_AND_UPDATE
+    importedRecordType: GOLDEN
+    allowOtherPublishers: true
+    waitDialogEnabled: false
+    stepper: entities.Brand.steppers.EditBrands
+  - _type: ExportAction
+    _name: Export
+    useCustomLabel: false
+    label: Export
+    description: ''
+    waitDialogEnabled: false
+

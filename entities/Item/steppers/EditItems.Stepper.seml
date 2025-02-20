@@ -1,0 +1,306 @@
+_package: entities.Item.steppers
+_type: Stepper
+_name: EditItems
+label: Edit Items
+entity: entities.Item.Item
+rootCollectionStep: entities.Item.steppers.EditItems.Items
+stepperFinishValidations:
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: references.ItemHasSize.Size
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: LOV
+    attribute: entities.Item.Item.Color
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: references.ItemImageHasItem.Item
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: FOREIGN
+    attribute: references.ItemHasProduct.Product
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: FOREIGN
+    attribute: references.ItemImageHasItem.Item
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: entities.Item.Item.Color
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: FOREIGN
+    attribute: references.ItemHasSize.Size
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: references.ItemHasProduct.Product
+steps:
+  - _type: FormStep
+    _name: ItemImage
+    canFinishSubLevel: true
+    description: ''
+    enableMasterValuePicking: false
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    label: Item Image
+    formTab: entities.ItemImage.forms.ItemImageEditingForm.ItemImage
+    parentCollectionStep: entities.Item.steppers.EditItems.Images
+    formStepValidations:
+      - _type: FormStepValidation
+        validationType: FOREIGN
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: references.ItemImageHasItem.Item
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: references.ItemImageHasItem.Item
+    referenceFormFieldConfigs:
+      - enableCreateReference: false
+        enableUserSort: true
+        fdnFormField: entities.ItemImage.forms.ItemImageEditingForm.FDN_Item
+        referencePickerType: AUTO_COMPLETE
+        referencePickerCollectionView: entities.Item.collection_views.ItemCollection
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ItemImageHasItem.Item
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ItemImageHasItem.Item
+  - _type: CollectionStep
+    _name: Items
+    label: Items
+    canFinishSubLevel: true
+    childDeleteType: HARD_DELETE
+    childImportModeOnParentEdit: CREATE_AND_UPDATE
+    createChildUsingManyToManyPicker: false
+    customSortEnabled: false
+    defaultDisplayType: TABLE
+    description: ''
+    displayGridAllowed: true
+    displayListAllowed: true
+    displayTableAllowed: true
+    enableChildCopyOnParentCreate: false
+    enableChildCopyOnParentEdit: false
+    enableChildCreationOnParentCreate: true
+    enableChildCreationOnParentEdit: true
+    enableChildDeleteOnParentEdit: true
+    enableChildEditOnParentCreate: true
+    enableChildEditOnParentEdit: true
+    enableChildExport: false
+    enableChildImportOnParentCreate: true
+    enableChildImportOnParentEdit: false
+    enableChildRemoveOnParentCreate: true
+    enableChildRemoveOnParentEdit: true
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    linear: false
+    manyToManyCustomSortEnabled: false
+    manyToManyDefaultDisplayType: TABLE
+    manyToManyDisplayGridAllowed: false
+    manyToManyDisplayListAllowed: false
+    manyToManyDisplayTableAllowed: false
+    manyToManyUserDefinedSortEnabled: false
+    skipToChildCreationOnParentCreate: true
+    skipToChildEditingOnParentEdit: true
+    useCustomCollectionLabel: false
+    userDefinedSortEnabled: false
+    collectionView: entities.Item.collection_views.ItemCollection
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: LOV
+        attribute: entities.Item.Item.Color
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: FOREIGN
+        attribute: references.ItemHasSize.Size
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: FOREIGN
+        attribute: references.ItemHasProduct.Product
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: references.ItemHasProduct.Product
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: entities.Item.Item.Color
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: references.ItemHasSize.Size
+  - _type: FormStep
+    _name: Item
+    label: Item
+    canFinishSubLevel: true
+    description: ''
+    enableMasterValuePicking: false
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    formTab: entities.Item.forms.ItemEditingForm.Item
+    parentCollectionStep: entities.Item.steppers.EditItems.Items
+    formStepValidations:
+      - _type: FormStepValidation
+        validationType: LOV
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: entities.Item.Item.Color
+      - _type: FormStepValidation
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: entities.Item.Item.Color
+      - _type: FormStepValidation
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        validationType: FOREIGN
+        attribute: references.ItemHasSize.Size
+      - _type: FormStepValidation
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: references.ItemHasProduct.Product
+      - _type: FormStepValidation
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: references.ItemHasSize.Size
+      - _type: FormStepValidation
+        executedOnFormOpen: true
+        executedOnDataChange: false
+        validationType: FOREIGN
+        attribute: references.ItemHasProduct.Product
+    referenceFormFieldConfigs:
+      - enableCreateReference: false
+        enableUserSort: true
+        referenceFilter: Record.Product.FID_Family = Referenced.FID_Family
+        fdnFormField: entities.Item.forms.ItemEditingForm.FDN_Size
+        referencePickerType: AUTO_COMPLETE
+        referencePickerCollectionView: entities.Size.collection_views.SizeCollection
+      - enableCreateReference: false
+        enableUserSort: true
+        referencePickerType: AUTO_COMPLETE
+        fdnFormField: entities.Item.forms.ItemEditingForm.FDN_Product
+        referencePickerCollectionView: entities.Product.collection_views.ProductCollection
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: LOV
+        attribute: entities.Item.Item.Color
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: entities.Item.Item.Color
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: FOREIGN
+        attribute: references.ItemHasSize.Size
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: references.ItemHasProduct.Product
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: references.ItemHasSize.Size
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: FOREIGN
+        attribute: references.ItemHasProduct.Product
+  - _type: CollectionStep
+    _name: Images
+    label: Images
+    canFinishSubLevel: true
+    childDeleteType: HARD_DELETE
+    childImportModeOnParentEdit: CREATE_AND_UPDATE
+    createChildUsingManyToManyPicker: false
+    customSortEnabled: false
+    defaultDisplayType: TABLE
+    description: ''
+    displayGridAllowed: true
+    displayListAllowed: true
+    displayTableAllowed: true
+    enableChildCopyOnParentCreate: true
+    enableChildCopyOnParentEdit: true
+    enableChildCreationOnParentCreate: true
+    enableChildCreationOnParentEdit: true
+    enableChildDeleteOnParentEdit: true
+    enableChildEditOnParentCreate: true
+    enableChildEditOnParentEdit: true
+    enableChildExport: false
+    enableChildImportOnParentCreate: false
+    enableChildImportOnParentEdit: false
+    enableChildRemoveOnParentCreate: true
+    enableChildRemoveOnParentEdit: true
+    enabledOnParentCreate: true
+    enabledOnParentEdit: false
+    formFieldsMode: AUTO
+    linear: true
+    manyToManyCustomSortEnabled: false
+    manyToManyDefaultDisplayType: TABLE
+    manyToManyDisplayGridAllowed: false
+    manyToManyDisplayListAllowed: false
+    manyToManyDisplayTableAllowed: false
+    manyToManyUserDefinedSortEnabled: false
+    skipToChildCreationOnParentCreate: true
+    skipToChildEditingOnParentEdit: true
+    useCustomCollectionLabel: false
+    userDefinedSortEnabled: false
+    collectionView: entities.ItemImage.collection_views.ItemImageCollection
+    oneToManyReference: references.ItemImageHasItem
+    parentCollectionStep: entities.Item.steppers.EditItems.Items
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Item.Item.Color
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ItemImageHasItem.Item
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ItemImageHasItem.Item
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ItemHasSize.Size
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ItemHasProduct.Product
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Item.Item.Color
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ItemHasProduct.Product
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ItemHasSize.Size
+
+
+
+
+
+
+
+
+
+

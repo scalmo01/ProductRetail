@@ -1,0 +1,28 @@
+_package: references
+_type: Reference
+_name: ProductHasBrand
+brokenValidationLabel: ''
+deletePropagation: RESTRICT
+fromNavigable: true
+fromRoleLabel: Product
+fromRoleName: Products
+fromRolePluralLabel: Products
+label: Product Has Brand
+mandatoryValidationLabel: ''
+oneToMany: true
+physicalName: PRODUCT_HAS_BRAND
+splitDuplicatePropagation: NONE
+toNavigable: true
+toRoleLabel: Brand
+toRoleName: Brand
+toRolePhysicalName: BRAND
+validationScope: PRE_CONSO
+fromEntity: entities.Product.Product
+toEntity: entities.Brand.Brand
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Brand
+  label: Brand
+  physicalName: BRAND
+  searchable: true
+  entity: entities.Product.Product

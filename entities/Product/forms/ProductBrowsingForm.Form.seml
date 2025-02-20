@@ -1,0 +1,848 @@
+_package: entities.Product.forms
+_type: Form
+_name: ProductBrowsingForm
+entity: entities.Product.Product
+default: true
+formContainers:
+  - _type: FormTab
+    _name: Product
+    documentationInterpreter: LITERAL
+    displayFormTabAs: ICON_LABEL
+    iconUrl: images://mdi/package-variant.svg
+    label: Product
+    posInParent: 0
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+  - _type: FormContainer
+    _name: Container41
+    layoutDirection: ROW
+    posInParent: 8
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Product
+  - _type: FormContainer
+    _name: Container31
+    layoutDirection: COLUMN
+    posInParent: 7
+    relativeWidth: 40
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container41
+  - _type: FormContainer
+    _name: Container32
+    layoutDirection: COLUMN
+    posInParent: 8
+    relativeWidth: 60
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container41
+formFields:
+  - _type: FormField
+    _name: SalesUnit
+    componentName: semMenuField
+    documentation: 'Sales unit is a goverened list of values that is dictated by our
+      Supply Chain department. Valid values are: * Pair * Piece * Set'
+    documentationInterpreter: LITERAL
+    label: Sales Unit
+    posInParent: 11
+    useCustomLabel: true
+    value: SalesUnit
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container31
+    componentProperties:
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: listSort
+        dataType: STRING
+        value: code
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: listSourceType
+        dataType: STRING
+        value: list-of-values
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: Material
+    componentName: semTextField
+    documentation: Decribes the main material used as it apears in the shipping box.
+      Refer to our **internal guidelines** for details.
+    documentationInterpreter: LITERAL
+    posInParent: 12
+    useCustomLabel: false
+    value: Material
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container31
+    componentProperties:
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isMultiline
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMinLines
+        dataType: DECIMAL
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMaxLines
+        dataType: DECIMAL
+        value: '3'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isCharCounterVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: FDN_Family
+    componentName: semReferenceField
+    documentationInterpreter: LITERAL
+    label: Family
+    posInParent: 9
+    useCustomLabel: true
+    value: FDN_Family
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container31
+    referencedEntity: entities.Family.Family
+    componentProperties:
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: useAvatarInChip
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: displayType
+        dataType: STRING
+        value: chip
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: Name
+    componentName: semTextField
+    documentation: Friendly name of a product. Consider using meaningful descriptions
+      that would augment our SEO. This is the first information our customers see
+      about our products.
+    documentationInterpreter: LITERAL
+    posInParent: 7
+    useCustomLabel: false
+    value: Name
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Product
+    componentProperties:
+      - _name: labelTextAlign
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isMultiline
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: display-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMaxLines
+        dataType: DECIMAL
+        value: '3'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isCharCounterVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMinLines
+        dataType: DECIMAL
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: CareInstructions
+    componentName: semTextField
+    documentation: Descriptive information for apparel products only. Does not apply
+      to shoes. Should match the care instructions indicated on the product label.
+    documentationInterpreter: LITERAL
+    posInParent: 16
+    useCustomLabel: false
+    value: CareInstructions
+    dataType: STRING
+    visibleValue: FID_Family in ('WOMENSCLOTHING', 'MENSCLOTHING', 'BOYSCLOTHING',
+      'GIRLSCLOTHING')
+    visibleValueInterpreter: SEMQL
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container31
+    componentProperties:
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isCharCounterVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMinLines
+        dataType: DECIMAL
+        value: '2'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMaxLines
+        dataType: DECIMAL
+        value: '10'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isMultiline
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: HeelHeight
+    componentName: semTextField
+    documentation: Property that applies only to womens and girls shoes. Important
+      for SEO.
+    documentationInterpreter: LITERAL
+    posInParent: 14
+    useCustomLabel: false
+    value: HeelHeight
+    dataType: STRING
+    visibleValue: FID_Family in ('WOMENSSHOES', 'GIRLSSHOES')
+    visibleValueInterpreter: SEMQL
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container31
+    componentProperties:
+      - _name: multilineMaxLines
+        dataType: DECIMAL
+        value: '3'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMinLines
+        dataType: DECIMAL
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isMultiline
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isCharCounterVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: Description
+    componentName: semTextField
+    documentation: 'Please consider the following when writing a desritive text for
+      the product: To get started, you need to know exactly who the buyer is: 1. Define
+      the buyer persona 2. Consider describing the list of features and benefits 3.
+      Use a friendly tone of voice 4. Optimize for search engines (SEO)'
+    documentationInterpreter: LITERAL
+    posInParent: 1
+    useCustomLabel: false
+    value: Description
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container32
+    componentProperties:
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isCharCounterVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMinLines
+        dataType: DECIMAL
+        value: '10'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMaxLines
+        dataType: DECIMAL
+        value: '10'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isMultiline
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: top
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: Origin
+    componentName: semMenuField
+    documentation: Country of origin for the product. Labelling our products with
+      the country of origin gives a better user experience for our international customers
+      browsing our online catalog.
+    documentationInterpreter: LITERAL
+    posInParent: 13
+    useCustomLabel: false
+    value: Origin
+    dataType: LONG_INTEGER
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container31
+    componentProperties:
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: listSort
+        dataType: STRING
+        value: none
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: ClosureType
+    componentName: semMenuField
+    documentation: Important attribute for shoes. Consider providing this information
+      to augment our search metrics.
+    documentationInterpreter: LITERAL
+    posInParent: 15
+    useCustomLabel: false
+    value: ClosureType
+    dataType: STRING
+    visibleValue: FID_Family in ('WOMENSSHOES', 'MENSSHOES', 'GIRLSSHOES', 'BOYSSHOES')
+    visibleValueInterpreter: SEMQL
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container31
+    componentProperties:
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: listSort
+        dataType: STRING
+        value: none
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: FDN_SubFamily
+    componentName: semReferenceField
+    documentationInterpreter: LITERAL
+    label: Sub Family
+    posInParent: 10
+    useCustomLabel: true
+    value: FDN_SubFamily
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container31
+    referencedEntity: entities.SubFamily.SubFamily
+    componentProperties:
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: displayType
+        dataType: STRING
+        value: chip
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: useAvatarInChip
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: FDN_Brand
+    componentName: semReferenceField
+    documentationInterpreter: LITERAL
+    label: Brand
+    posInParent: 8
+    useCustomLabel: true
+    value: FDN_Brand
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container31
+    referencedEntity: entities.Brand.Brand
+    componentProperties:
+      - _name: useAvatarInChip
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: displayType
+        dataType: STRING
+        value: chip
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: ID
+    componentName: semIdField
+    documentation: Unique product ID. Please refer to our **internal guidelines**
+      when launching a new product as to how you should use this field.
+    documentationInterpreter: LITERAL
+    posInParent: 6
+    useCustomLabel: false
+    value: ID
+    dataType: LONG_INTEGER
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container31
+    componentProperties:
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: ImageURL
+    componentName: semImageField
+    documentation: Consider connecting with the *marketing* department to get the
+      best image URL to use when creating a new product. The *marketing* department
+      is in charge of the digital assets management system that keeps track of all
+      product images designed by our artists.
+    documentationInterpreter: LITERAL
+    posInParent: 0
+    useCustomLabel: false
+    value: ImageURL
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Product.forms.ProductBrowsingForm.Container32
+    componentProperties:
+      - _name: imageSourceType
+        dataType: STRING
+        value: url
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageMode
+        dataType: STRING
+        value: fit
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: fallbackImageType
+        dataType: STRING
+        value: url
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageAlign
+        dataType: STRING
+        value: middle-center
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: showFullSizeOnClick
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageHeight
+        dataType: STRING
+        value: '300'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty

@@ -1,0 +1,22 @@
+_package: entities.ItemImage.display_cards
+_type: DisplayCard
+_name: ItemImageDisplayCard
+entity: entities.ItemImage.ItemImage
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageSourceType: URL
+avatarImageValue: ImageURL
+avatarImageValueInterpreter: SEMQL
+default: true
+description: ''
+primaryImageAlign: MIDDLE_CENTER
+primaryImageFallbackSourceType: URL
+primaryImageFallbackValue: ''
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageMode: FIT
+primaryImageSourceType: URL
+primaryImageValue: ImageURL
+primaryImageValueInterpreter: SEMQL
+primaryTextExpression: Label
+secondaryTextExpression: Item.Product.Name || ' • ' || Item.Size.SizeUS || ' • ' ||
+  Item.Color

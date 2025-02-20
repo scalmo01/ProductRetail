@@ -1,0 +1,21 @@
+_package: entities.Product.display_cards
+_type: DisplayCard
+_name: ProductDisplayCard
+entity: entities.Product.Product
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageSourceType: URL
+avatarImageValue: ImageURL
+avatarImageValueInterpreter: SEMQL
+default: true
+primaryImageAlign: MIDDLE_CENTER
+primaryImageFallbackSourceType: CONTENT
+primaryImageFallbackValue: Name
+primaryImageFallbackValueInterpreter: SEMQL
+primaryImageMode: FIT
+primaryImageSourceType: URL
+primaryImageValue: ImageURL
+primaryImageValueInterpreter: SEMQL
+primaryTextExpression: Name
+secondaryTextExpression: "'by ' || FDN_Brand "
+

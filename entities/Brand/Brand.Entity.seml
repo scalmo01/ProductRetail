@@ -1,0 +1,77 @@
+_package: entities.Brand
+_type: Entity
+_name: Brand
+entityType: BASIC
+physicalTableName: BRAND
+iconUrl: ''
+label: Brand
+pluralLabel: Brands
+description: Defines all brands of the products we are selling
+documentation: Defines all brands of the products we are selling
+enableDelete: true
+dataEntryAllowed: true
+historizeGolden: true
+historizeMaster: false
+pkAttributes:
+  - _type: PKAttribute
+    _name: ID
+    label: ID
+    physicalColName: ID
+    documentation: ID of the brand. The ID is automatically calculated according to
+      the name of the brand.
+    description: ID of the brand. The ID is automatically calculated according to
+      the name of the brand.
+    dataType: String
+    idGenerationType: SEMQL
+    idSequenceStartsWith: 10001
+    fuzzyMatchedEntityGoldenIdGenerationType: SEQUENCE
+    fuzzyMatchedEntityGoldenIdSequenceStartsWith: 1
+    searchable: false
+    mandatory: true
+    goldenAttribute: true
+    i18ned: false
+    multiValued: false
+    valueSeparator: ','
+    idExpression: SUBSTR( UPPER( SEM_NORMALIZE(Name) ) , 1, 128)
+    length: 128
+    precision: 0
+    scale: 0
+atomicAttributes:
+  - _type: AtomicAttribute
+    _name: Name
+    dataType: String
+    physicalColName: NAME
+    label: Name
+    documentation: Legal name of the brand.
+    description: Legal name of the brand.
+    goldenAttribute: true
+    i18ned: false
+    lovValidationScope: PRE_CONSO
+    searchable: true
+    mandatory: true
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    valueSeparator: ','
+    precision: 0
+    scale: 0
+    length: 128
+  - _type: AtomicAttribute
+    _name: LogoURL
+    label: Logo
+    documentation: URL for the image representing the brand.
+    description: URL for the image representing the brand.
+    dataType: user_defined_types.URLString
+    goldenAttribute: true
+    i18ned: false
+    lovValidationScope: PRE_CONSO
+    mandatory: false
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    physicalColName: LOGO_URL
+    valueSeparator: ','
+    length: 2000
+    precision: 0
+    scale: 0
+    searchable: true

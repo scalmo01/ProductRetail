@@ -1,0 +1,93 @@
+_package: entities.Item
+_type: Entity
+_name: Item
+label: Item
+physicalTableName: ITEM
+pluralLabel: Items
+description: ''
+documentation: ''
+enableDelete: true
+entityType: BASIC
+historizeGolden: true
+historizeMaster: false
+iconUrl: images://mdi/basket-fill.svg
+dataEntryAllowed: true
+pkAttributes:
+  - _type: PKAttribute
+    _name: UPC
+    label: UPC
+    physicalColName: UPC
+    description: Universal Product Code (UPC) is a 12-digit bar code used extensively
+      for retail packaging in United States.
+    documentation: Universal Product Code (UPC) is a 12-digit bar code used extensively
+      for retail packaging in United States.
+    fuzzyMatchedEntityGoldenIdGenerationType: SEQUENCE
+    fuzzyMatchedEntityGoldenIdSequenceStartsWith: 1
+    goldenAttribute: true
+    i18ned: false
+    idGenerationType: MANUAL
+    idSequenceStartsWith: 1
+    length: 12
+    mandatory: true
+    multiValued: false
+    precision: 0
+    scale: 0
+    searchable: false
+    valueSeparator: ','
+    dataType: String
+atomicAttributes:
+  - _type: AtomicAttribute
+    _name: Color
+    label: Color
+    physicalColName: COLOR
+    lovValidationScope: PRE_CONSO
+    description: ''
+    documentation: ''
+    goldenAttribute: true
+    i18ned: false
+    length: 20
+    mandatory: true
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    searchable: true
+    valueSeparator: ','
+    dataType: list_of_values.StandardColors
+    mandatoryValidationLabel: ''
+  - _type: AtomicAttribute
+    _name: MainImageURL
+    lovValidationScope: PRE_CONSO
+    description: ''
+    documentation: ''
+    goldenAttribute: true
+    i18ned: false
+    label: Main Image
+    length: 2000
+    mandatory: false
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    physicalColName: MAIN_IMAGE_URL
+    precision: 0
+    scale: 0
+    searchable: true
+    valueSeparator: ','
+    dataType: user_defined_types.URLString
+  - _type: AtomicAttribute
+    _name: ColorDescription
+    label: Color Description
+    physicalColName: COLOR_DESCRIPTION
+    lovValidationScope: PRE_CONSO
+    description: ''
+    documentation: ''
+    goldenAttribute: true
+    i18ned: false
+    length: 128
+    mandatory: false
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    precision: 0
+    scale: 0
+    searchable: true
+    valueSeparator: ','
+    dataType: String

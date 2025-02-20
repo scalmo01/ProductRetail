@@ -1,0 +1,17 @@
+_package: entities.SubFamily.display_cards
+_type: DisplayCard
+_name: SubFamilyTextAvatar
+entity: entities.SubFamily.SubFamily
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageSourceType: CONTENT
+avatarImageValue: Name
+avatarImageValueInterpreter: SEMQL
+default: false
+primaryImageAlign: MIDDLE_CENTER
+primaryImageFallbackSourceType: URL
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageMode: FIT
+primaryImageSourceType: URL
+primaryImageValueInterpreter: LITERAL
+primaryTextExpression: Name

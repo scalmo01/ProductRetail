@@ -1,0 +1,77 @@
+_package: entities.Brand.collection_views
+_type: CollectionView
+_name: BrandCollection
+default: true
+entity: entities.Brand.Brand
+gridAllowed: true
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+tableAllowed: true
+tableDisplayCardColumnLabel: Brand
+tableRowLines: 2
+tableShowDisplayCard: true
+listAllowed: true
+listItemLines: 2
+listShowDisplayCardAvatar: true
+listShowDivider: false
+displayCard: entities.Brand.display_cards.BrandDisplayCard
+description: ''
+tableColumns:
+  - _type: TableColumn
+    _name: LogoURL
+    value: LogoURL
+    useCustomLabel: false
+    visibleByDefault: true
+    componentName: semImageField
+    dataType: STRING
+    columnAlign: LEFT
+    documentationInterpreter: LITERAL
+    posInParent: 0
+    componentProperties:
+      - _name: imageMode
+        _type: ComponentProperty
+        dataType: STRING
+        value: fit
+        valueInterpreter: LITERAL
+      - _name: imageAlign
+        _type: ComponentProperty
+        dataType: STRING
+        value: middle-center
+        valueInterpreter: LITERAL
+      - _name: imageSourceType
+        _type: ComponentProperty
+        dataType: STRING
+        value: url
+        valueInterpreter: LITERAL
+      - _name: fallbackImageType
+        _type: ComponentProperty
+        dataType: STRING
+        value: url
+        valueInterpreter: LITERAL
+      - _name: showFullSizeOnClick
+        _type: ComponentProperty
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+  - _type: TableColumn
+    _name: Name
+    value: Name
+    useCustomLabel: false
+    visibleByDefault: true
+    componentName: semTextField
+    dataType: STRING
+    columnAlign: LEFT
+    posInParent: 1
+    documentationInterpreter: LITERAL
+  - _type: TableColumn
+    _name: ID
+    columnAlign: LEFT
+    componentName: semIdField
+    documentationInterpreter: LITERAL
+    posInParent: 2
+    useCustomLabel: false
+    value: ID
+    visibleByDefault: true
+    dataType: STRING

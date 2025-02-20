@@ -1,0 +1,112 @@
+_package: entities.SubFamily.steppers
+_type: Stepper
+_name: EditSubfamily
+entity: entities.SubFamily.SubFamily
+label: Edit Subfamily
+rootCollectionStep: entities.SubFamily.steppers.EditSubfamily.Subfamilies
+stepperFinishValidations:
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: references.SubFamilyHasFamily.Family
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: FOREIGN
+    attribute: references.SubFamilyHasFamily.Family
+  - _type: StepperFinishValidation
+    onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: entities.SubFamily.SubFamily.Name
+steps:
+  - _type: CollectionStep
+    _name: Subfamilies
+    canFinishSubLevel: true
+    childDeleteType: HARD_DELETE
+    childImportModeOnParentEdit: CREATE_AND_UPDATE
+    createChildUsingManyToManyPicker: false
+    customSortEnabled: false
+    defaultDisplayType: TABLE
+    displayGridAllowed: false
+    displayListAllowed: true
+    displayTableAllowed: true
+    enableChildCopyOnParentCreate: false
+    enableChildCopyOnParentEdit: false
+    enableChildCreationOnParentCreate: true
+    enableChildCreationOnParentEdit: true
+    enableChildDeleteOnParentEdit: true
+    enableChildEditOnParentCreate: true
+    enableChildEditOnParentEdit: true
+    enableChildExport: false
+    enableChildImportOnParentCreate: true
+    enableChildImportOnParentEdit: false
+    enableChildRemoveOnParentCreate: true
+    enableChildRemoveOnParentEdit: true
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    label: Subfamilies
+    linear: false
+    manyToManyCustomSortEnabled: false
+    manyToManyDefaultDisplayType: TABLE
+    manyToManyDisplayGridAllowed: false
+    manyToManyDisplayListAllowed: false
+    manyToManyDisplayTableAllowed: false
+    manyToManyUserDefinedSortEnabled: false
+    skipToChildCreationOnParentCreate: true
+    skipToChildEditingOnParentEdit: true
+    useCustomCollectionLabel: false
+    userDefinedSortEnabled: false
+    collectionView: entities.SubFamily.collection_views.SubFamilyCollection
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.SubFamilyHasFamily.Family
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.SubFamilyHasFamily.Family
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.SubFamily.SubFamily.Name
+  - _type: FormStep
+    _name: SubFamily
+    canFinishSubLevel: true
+    enableMasterValuePicking: false
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    label: SubFamily
+    formTab: entities.SubFamily.forms.SubFamilyEditAndBrowsing.Subfamily
+    parentCollectionStep: entities.SubFamily.steppers.EditSubfamily.Subfamilies
+    formStepValidations:
+      - _type: FormStepValidation
+        validationType: FOREIGN
+        executedOnFormOpen: false
+        executedOnDataChange: true
+        attribute: references.SubFamilyHasFamily.Family
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: references.SubFamilyHasFamily.Family
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: true
+        executedOnFormOpen: true
+        attribute: entities.SubFamily.SubFamily.Name
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: references.SubFamilyHasFamily.Family
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: FOREIGN
+        attribute: references.SubFamilyHasFamily.Family
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: entities.SubFamily.SubFamily.Name
+

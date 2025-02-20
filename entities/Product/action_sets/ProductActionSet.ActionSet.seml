@@ -1,0 +1,75 @@
+_package: entities.Product.action_sets
+_type: ActionSet
+_name: ProductActionSet
+defaultActionSet: true
+label: Product Action Set
+description: ''
+entity: entities.Product.Product
+actions:
+  - _type: DeleteAction
+    _name: Delete
+    availableForGoldenData: true
+    availableForMasterData: false
+    deleteType: HARD_DELETE
+    description: ''
+    label: Delete
+    multipleSelectionAllowed: true
+    requiredRole: DataSteward
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: EditAction
+    _name: Edit
+    availableForErrorData: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    description: ''
+    itemsLimit: 1000
+    label: Edit_Product Stepper
+    multipleSelectionAllowed: true
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Product.steppers.ProductStepper
+  - _type: CreateAction
+    _name: Create
+    description: ''
+    allowOtherPublishers: true
+    createMultiple: true
+    createdRecordType: GOLDEN
+    defaultPublisher: ''
+    label: Create
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Product.steppers.ProductStepper
+  - _type: ExportAction
+    _name: Export
+    description: ''
+    label: Export
+    useCustomLabel: false
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: Import
+    allowOtherPublishers: true
+    description: ''
+    importMode: CREATE_AND_UPDATE
+    importedRecordType: GOLDEN
+    label: Import_Product Stepper
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Product.steppers.ProductStepper
+  - _type: BrowseGraphAction
+    _name: BrowseGraph
+    description: ''
+    label: Browse Graph
+    useCustomLabel: false
+    waitDialogEnabled: false
+  - _type: MassUpdateAction
+    _name: MassUpdate
+    availableForErrorData: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    description: ''
+    label: Mass Update_Product Stepper
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Product.steppers.ProductStepper
+

@@ -1,0 +1,160 @@
+_package: entities.Item.collection_views
+_type: CollectionView
+_name: ItemCollectionErrors
+default: false
+entity: entities.Item.Item
+tableDisplayCardColumnLabel: ''
+description: ''
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: false
+listItemLines: 2
+listShowDisplayCardAvatar: false
+listShowDivider: false
+tableAllowed: true
+tableRowLines: 1
+tableShowDisplayCard: false
+displayCard: entities.Item.display_cards.ItemDisplayCard
+tableColumns:
+  - _type: TableColumn
+    _name: ConstraintName
+    columnAlign: LEFT
+    componentName: semTextField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 5
+    useCustomLabel: false
+    value: ConstraintName
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: ErrorStatus
+    value: ErrorStatus
+    columnAlign: LEFT
+    componentName: semTextField
+    documentation: ''
+    description: ''
+    documentationInterpreter: LITERAL
+    posInParent: 0
+    useCustomLabel: false
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: ColorDescription
+    columnAlign: LEFT
+    componentName: semTextField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    label: Color
+    posInParent: 10
+    useCustomLabel: true
+    value: ColorDescription
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: FDN_Size
+    columnAlign: LEFT
+    componentName: semReferenceField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    label: Size
+    useCustomLabel: true
+    value: FDN_Size
+    dataType: STRING
+    visibleByDefault: true
+    referencedEntity: entities.Size.Size
+    posInParent: 9
+    componentProperties:
+      - _name: displayType
+        _type: ComponentProperty
+        dataType: STRING
+        value: hyperlink
+        valueInterpreter: LITERAL
+  - _type: TableColumn
+    _name: ConstraintType
+    columnAlign: LEFT
+    componentName: semTextField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 6
+    useCustomLabel: false
+    value: ConstraintType
+    dataType: STRING
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: LoadID
+    columnAlign: LEFT
+    componentName: semTextField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 1
+    useCustomLabel: false
+    value: LoadID
+    dataType: LONG_INTEGER
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: BatchDate
+    columnAlign: LEFT
+    componentName: semDatepickerField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 4
+    useCustomLabel: false
+    value: BatchDate
+    dataType: TIMESTAMP
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: OriginalBatchID
+    columnAlign: LEFT
+    componentName: semTextField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 3
+    useCustomLabel: false
+    value: OriginalBatchID
+    dataType: LONG_INTEGER
+    visibleByDefault: true
+  - _type: TableColumn
+    _name: FDN_Product
+    columnAlign: LEFT
+    componentName: semReferenceField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    label: Product
+    posInParent: 8
+    useCustomLabel: true
+    value: FDN_Product
+    dataType: STRING
+    visibleByDefault: true
+    referencedEntity: entities.Product.Product
+    componentProperties:
+      - _name: displayType
+        _type: ComponentProperty
+        dataType: STRING
+        value: hyperlink
+        valueInterpreter: LITERAL
+  - _type: TableColumn
+    _name: UPC
+    columnAlign: LEFT
+    componentName: semIdField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 7
+    useCustomLabel: false
+    value: UPC
+    dataType: STRING
+    visibleByDefault: true
+
+

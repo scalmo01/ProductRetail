@@ -1,0 +1,46 @@
+_package: entities.Family.action_sets
+_type: ActionSet
+entity: entities.Family.Family
+_name: FamilyActions
+label: Family Actions
+defaultActionSet: true
+description: ''
+actions:
+  - _type: CreateAction
+    _name: CreateFamily
+    label: Create
+    allowOtherPublishers: true
+    createMultiple: false
+    createdRecordType: GOLDEN
+    description: ''
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Family.steppers.EditFamilies
+  - _type: ImportAction
+    _name: ImportFamily
+    label: Family Import
+    allowOtherPublishers: true
+    description: ''
+    importMode: CREATE_AND_UPDATE
+    importedRecordType: GOLDEN
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Family.steppers.EditFamilies
+  - _type: ExportAction
+    _name: ExportFamily
+    label: Export
+    description: ''
+    useCustomLabel: false
+    waitDialogEnabled: false
+  - _type: EditAction
+    _name: EditFamily
+    label: Edit
+    description: ''
+    availableForErrorData: false
+    availableForGoldenData: true
+    availableForMasterData: false
+    itemsLimit: 1000
+    multipleSelectionAllowed: true
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Family.steppers.EditFamilies

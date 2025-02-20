@@ -1,0 +1,56 @@
+_package: entities.Size.action_sets
+_type: ActionSet
+_name: SizeActions
+entity: entities.Size.Size
+label: Size Actions
+defaultActionSet: false
+description: ''
+actions:
+  - _type: CreateAction
+    _name: CreateSize
+    allowOtherPublishers: true
+    createMultiple: true
+    createdRecordType: GOLDEN
+    description: ''
+    label: Create
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Size.steppers.EditSize
+  - _type: ImportAction
+    _name: ImportSize
+    label: Import
+    allowOtherPublishers: true
+    description: ''
+    importMode: CREATE_AND_UPDATE
+    importedRecordType: GOLDEN
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Size.steppers.EditSize
+  - _type: DeleteAction
+    _name: Delete
+    label: Delete
+    availableForGoldenData: true
+    availableForMasterData: false
+    deleteType: HARD_DELETE
+    description: ''
+    multipleSelectionAllowed: true
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ExportAction
+    _name: ExportSize
+    label: Export
+    description: ''
+    useCustomLabel: false
+    waitDialogEnabled: false
+  - _type: EditAction
+    _name: EditSize
+    label: Edit
+    availableForErrorData: false
+    availableForGoldenData: true
+    availableForMasterData: false
+    description: ''
+    multipleSelectionAllowed: true
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Size.steppers.EditSize
+

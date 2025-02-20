@@ -1,0 +1,62 @@
+_package: entities.Item.action_sets
+_type: ActionSet
+entity: entities.Item.Item
+_name: ItemActions
+label: Item Actions
+defaultActionSet: true
+description: ''
+actions:
+  - _type: BrowseGraphAction
+    description: ''
+    label: Browse Graph
+    _name: BrowseGraph
+    useCustomLabel: false
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: Import
+    label: Import
+    allowOtherPublishers: true
+    description: ''
+    importMode: CREATE_AND_UPDATE
+    importedRecordType: GOLDEN
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Item.steppers.EditItems
+  - _type: ExportAction
+    _name: Export
+    label: Export
+    description: ''
+    useCustomLabel: false
+    waitDialogEnabled: false
+  - _type: EditAction
+    _name: Edit
+    label: Edit
+    description: ''
+    availableForErrorData: false
+    availableForGoldenData: true
+    availableForMasterData: false
+    itemsLimit: 1000
+    multipleSelectionAllowed: true
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Item.steppers.EditItems
+  - _type: CreateAction
+    _name: Create
+    label: Create
+    allowOtherPublishers: true
+    createMultiple: false
+    createdRecordType: GOLDEN
+    description: ''
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Item.steppers.EditItems
+  - _type: MassUpdateAction
+    _name: MassUpdate
+    label: Mass Update
+    availableForErrorData: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    description: ''
+    useCustomLabel: false
+    waitDialogEnabled: false
+    stepper: entities.Item.steppers.EditItems

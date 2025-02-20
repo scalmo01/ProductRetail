@@ -1,0 +1,79 @@
+_package: entities.Family.steppers
+_type: Stepper
+_name: EditFamilies
+label: Edit Families
+entity: entities.Family.Family
+rootCollectionStep: entities.Family.steppers.EditFamilies.Families
+stepperFinishValidations:
+  - _type: StepperFinishValidation
+    onStepperFinish: SKIP
+    validationType: MANDATORY
+    attribute: entities.Family.Family.Name
+steps:
+  - _type: CollectionStep
+    _name: Families
+    label: Families
+    canFinishSubLevel: true
+    childDeleteType: HARD_DELETE
+    childImportModeOnParentEdit: CREATE_AND_UPDATE
+    createChildUsingManyToManyPicker: false
+    customSortEnabled: false
+    defaultDisplayType: TABLE
+    description: ''
+    displayGridAllowed: true
+    displayListAllowed: true
+    displayTableAllowed: true
+    enableChildCopyOnParentCreate: false
+    enableChildCopyOnParentEdit: false
+    enableChildCreationOnParentCreate: true
+    enableChildCreationOnParentEdit: true
+    enableChildDeleteOnParentEdit: false
+    enableChildEditOnParentCreate: true
+    enableChildEditOnParentEdit: true
+    enableChildExport: false
+    enableChildImportOnParentCreate: true
+    enableChildImportOnParentEdit: false
+    enableChildRemoveOnParentCreate: true
+    enableChildRemoveOnParentEdit: false
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    linear: true
+    manyToManyCustomSortEnabled: false
+    manyToManyDisplayGridAllowed: false
+    manyToManyDisplayListAllowed: false
+    manyToManyDisplayTableAllowed: false
+    manyToManyUserDefinedSortEnabled: false
+    manyToManyDefaultDisplayType: TABLE
+    skipToChildCreationOnParentCreate: true
+    skipToChildEditingOnParentEdit: true
+    useCustomCollectionLabel: false
+    userDefinedSortEnabled: false
+    collectionView: entities.Family.collection_views.FamilyCollection
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Family.Family.Name
+  - _type: FormStep
+    _name: Family
+    label: Family
+    canFinishSubLevel: true
+    description: ''
+    enableMasterValuePicking: false
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    formTab: entities.Family.forms.FamilyDataEntryForm.Family
+    parentCollectionStep: entities.Family.steppers.EditFamilies.Families
+    formStepValidations:
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: entities.Family.Family.Name
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Family.Family.Name

@@ -1,0 +1,28 @@
+_package: references
+_type: Reference
+_name: ProductHasSubFamily
+brokenValidationLabel: ''
+deletePropagation: RESTRICT
+fromNavigable: true
+fromRoleLabel: Product
+fromRoleName: Products
+fromRolePluralLabel: Products
+label: Product Has Sub Family
+mandatoryValidationLabel: ''
+oneToMany: true
+physicalName: PRODUCT_HAS_SUB_FAMILY
+splitDuplicatePropagation: NONE
+toNavigable: true
+toRoleLabel: Sub Family
+toRoleName: SubFamily
+toRolePhysicalName: SUB_FAMILY
+validationScope: PRE_CONSO
+fromEntity: entities.Product.Product
+toEntity: entities.SubFamily.SubFamily
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: SubFamily
+  label: Sub Family
+  physicalName: SUB_FAMILY
+  searchable: true
+  entity: entities.Product.Product

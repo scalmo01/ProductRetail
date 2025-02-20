@@ -1,0 +1,73 @@
+_package: entities.ItemImage
+_type: Entity
+_name: ItemImage
+entityType: BASIC
+dataEntryAllowed: true
+description: ''
+documentation: ''
+enableDelete: true
+historizeGolden: false
+historizeMaster: false
+iconUrl: images://mdi/folder-multiple-image.svg
+label: Item Image
+physicalTableName: ITEM_IMAGE
+pluralLabel: Item Images
+pkAttributes:
+  - _type: PKAttribute
+    _name: ID
+    description: ''
+    documentation: ''
+    fuzzyMatchedEntityGoldenIdGenerationType: SEQUENCE
+    fuzzyMatchedEntityGoldenIdSequenceStartsWith: 1
+    goldenAttribute: true
+    i18ned: false
+    idGenerationType: SEQUENCE
+    idSequenceStartsWith: 10001
+    length: 0
+    mandatory: true
+    multiValued: false
+    physicalColName: ID
+    precision: 38
+    scale: 0
+    searchable: false
+    valueSeparator: ','
+    dataType: LongInteger
+atomicAttributes:
+  - _type: AtomicAttribute
+    _name: ImageURL
+    lovValidationScope: PRE_CONSO
+    description: ''
+    documentation: ''
+    goldenAttribute: true
+    i18ned: false
+    label: Image URL
+    length: 128
+    mandatory: false
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    physicalColName: IMAGE_URL
+    precision: 0
+    scale: 0
+    searchable: true
+    valueSeparator: ','
+    dataType: String
+    mandatoryValidationLabel: ''
+  - _type: AtomicAttribute
+    _name: Label
+    lovValidationScope: PRE_CONSO
+    description: ''
+    documentation: ''
+    goldenAttribute: true
+    i18ned: false
+    label: Label
+    length: 128
+    mandatory: false
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    physicalColName: LABEL
+    precision: 0
+    scale: 0
+    searchable: true
+    valueSeparator: ','
+    dataType: String

@@ -1,0 +1,67 @@
+_package: entities.Size
+_type: Entity
+_name: Size
+label: Size
+dataEntryAllowed: true
+enableDelete: true
+entityType: BASIC
+historizeGolden: false
+historizeMaster: false
+iconUrl: images://mdi/format-size.svg
+physicalTableName: SIZES
+pluralLabel: Sizes
+pkAttributes:
+  - _type: PKAttribute
+    _name: ID
+    fuzzyMatchedEntityGoldenIdGenerationType: SEQUENCE
+    fuzzyMatchedEntityGoldenIdSequenceStartsWith: 1
+    goldenAttribute: true
+    i18ned: false
+    idExpression: FID_Family || '.' || SizeUS
+    idGenerationType: SEMQL
+    idSequenceStartsWith: 1
+    label: ID
+    length: 128
+    mandatory: true
+    multiValued: false
+    physicalColName: ID
+    precision: 0
+    scale: 0
+    searchable: false
+    valueSeparator: ','
+    dataType: String
+atomicAttributes:
+  - _type: AtomicAttribute
+    _name: SizeUS
+    lovValidationScope: PRE_CONSO
+    goldenAttribute: true
+    i18ned: false
+    label: Size (US)
+    length: 128
+    mandatory: true
+    mandatoryValidationScope: PRE_CONSO
+    mandatoryValidationLabel: ''
+    multiValued: false
+    physicalColName: SIZE_US
+    precision: 0
+    scale: 0
+    searchable: true
+    valueSeparator: ','
+    dataType: String
+  - _type: AtomicAttribute
+    _name: SizeEU
+    lovValidationScope: PRE_CONSO
+    goldenAttribute: true
+    i18ned: false
+    label: Size (EU)
+    length: 128
+    mandatory: false
+    mandatoryValidationLabel: ''
+    mandatoryValidationScope: PRE_CONSO
+    multiValued: false
+    physicalColName: SIZE_EU
+    precision: 0
+    scale: 0
+    searchable: true
+    valueSeparator: ','
+    dataType: String

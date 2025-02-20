@@ -1,0 +1,49 @@
+_package: entities.Brand.business_views
+_type: BusinessView
+_name: Brands
+label: Brands
+businessViewEntities:
+  - _name: Brand
+    _type: BusinessViewEntity
+    businessEntitySearchConfigs:
+      - _name: TextConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: TEXT
+        enabled: true
+      - _name: FormConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: BY_FORM
+        enabled: true
+      - _name: AdvancedConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: ADVANCED
+        enabled: true
+      - _name: SemqlConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: SEMQL
+        enabled: true
+    actionSet: ''
+    collection: entities.Brand.collection_views.BrandCollection
+    displayRecordCount: ALWAYS
+    enableUserDefinedSort: true
+    entity: entities.Brand.Brand
+    form: entities.Brand.forms.BrandBrowsingForm
+    gridAllowed: true
+    listAllowed: true
+    outlineVisible: false
+    overrideDefaultSort: false
+    sortExpression: ''
+    tableAllowed: true
+displayRootNodeAs: ICON_LABEL
+enableHierarchyView: false
+entity: entities.Brand.Brand
+filter: 1 = 1
+iconUrl: images://mdi/label-outline.svg
+rootBusinessViewEntity: entities.Brand.business_views.Brands.Brand
+rootDescription: ''
+rootLabel: Brand
+rootPluralLabel: Brands
+useHierarchyOnOpen: false
+visible: true
+
+

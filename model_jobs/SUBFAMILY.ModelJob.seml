@@ -1,0 +1,15 @@
+_package: model_jobs
+_type: ModelJob
+_name: SUBFAMILY
+jobType: INTEGRATION
+queueName: Default
+modelTasks:
+  - entity: entities.SubFamily.SubFamily
+    _type: ModelJobTask
+    _name: SubFamily
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true

@@ -1,0 +1,460 @@
+_package: entities.Item.forms
+_type: Form
+_name: ItemEditingForm
+default: false
+description: ''
+documentation: ''
+entity: entities.Item.Item
+formContainers:
+  - _type: FormTab
+    _name: Item
+    description: ''
+    displayFormTabAs: ICON_LABEL
+    documentation: ''
+    documentationInterpreter: LITERAL
+    iconUrl: images://mdi/basket-fill.svg
+    label: Item
+    posInParent: 0
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+  - _type: FormContainer
+    layoutDirection: ROW
+    _name: Container29
+    posInParent: 8
+    parentFormContainer: entities.Item.forms.ItemEditingForm.Container39
+  - _type: FormContainer
+    _name: Container39
+    layoutDirection: ROW
+    posInParent: 7
+    parentFormContainer: entities.Item.forms.ItemEditingForm.Item
+  - _type: FormContainer
+    layoutDirection: COLUMN
+    _name: Container28
+    posInParent: 7
+    parentFormContainer: entities.Item.forms.ItemEditingForm.Container39
+formFields:
+  - _type: FormField
+    _name: MainImageURL
+    componentName: semImageField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    label: Primary Image
+    posInParent: 2
+    useCustomLabel: true
+    value: MainImageURL
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Item.forms.ItemEditingForm.Container29
+    componentProperties:
+      - _name: useFloatingLabel
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageAlign
+        dataType: STRING
+        value: middle-center
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: helperText
+        dataType: STRING
+        value: If left empty, will use the parent image.
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: showFullSizeOnClick
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageHeight
+        dataType: STRING
+        value: '300'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: fallbackImageType
+        dataType: STRING
+        value: url
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageSourceType
+        dataType: STRING
+        value: url
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageMode
+        dataType: STRING
+        value: fit
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: ColorDescription
+    componentName: semTextField
+    description: ''
+    documentation: Our detailed color and style descriptions are a competitive advantage.
+      Make them clever and thought-provoking.
+    documentationInterpreter: LITERAL
+    posInParent: 7
+    useCustomLabel: false
+    value: ColorDescription
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Item.forms.ItemEditingForm.Container28
+    componentProperties:
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMaxLines
+        dataType: DECIMAL
+        value: '3'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMinLines
+        dataType: DECIMAL
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: helperText
+        dataType: STRING
+        value: Make color description clever and thought-provoking.
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isCharCounterVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isMultiline
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: FDN_Product
+    componentName: semReferenceField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    label: Product
+    posInParent: 4
+    useCustomLabel: true
+    value: FDN_Product
+    dataType: STRING
+    visibleValue: '0'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Item.forms.ItemEditingForm.Container28
+    referencedEntity: entities.Product.Product
+    componentProperties:
+      - _name: displayType
+        dataType: STRING
+        value: chip
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: useAvatarInChip
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: helperText
+        dataType: STRING
+        value: Parent product
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: UPC
+    componentName: semIdField
+    description: ''
+    documentation: Universal Product Code (UPC) or barcode ID for this item. Please
+      sync-up with the Supply Chain team.
+    documentationInterpreter: LITERAL
+    posInParent: 3
+    useCustomLabel: false
+    value: UPC
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Item.forms.ItemEditingForm.Container28
+    componentProperties:
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: useFloatingLabel
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: helperText
+        dataType: STRING
+        value: Barcode ID. See with Supply Chain team...
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: FDN_Size
+    componentName: semReferenceField
+    description: ''
+    documentation: Standard sizes are provided in the grid sizes for the corresponding
+      family for the product.
+    documentationInterpreter: LITERAL
+    label: Size
+    posInParent: 5
+    useCustomLabel: true
+    value: FDN_Size
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    displayCard: entities.Size.display_cards.SizeDisplayCardMinimal
+    parentFormContainer: entities.Item.forms.ItemEditingForm.Container28
+    referencedEntity: entities.Size.Size
+    componentProperties:
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: useAvatarInChip
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: displayType
+        dataType: STRING
+        value: chip
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: useSecondaryTextInChip
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: helperText
+        dataType: STRING
+        value: Sizes are the ones available for the product family.
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: Color
+    componentName: semMenuField
+    description: ''
+    documentation: Standardized colors are important for SEO. Choose the closest useful
+      match from the standpoint of a prospective customer.
+    documentationInterpreter: LITERAL
+    posInParent: 6
+    useCustomLabel: false
+    value: Color
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.Item.forms.ItemEditingForm.Container28
+    componentProperties:
+      - _name: listSort
+        dataType: STRING
+        value: code
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: helperText
+        dataType: STRING
+        value: Choose the closest useful match from the standpoint of a prospective
+          customer.
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textColor
+        dataType: STRING
+        value: case when lower(Color) = 'white' then 'grey' else 'css:' || Color end
+        valueInterpreter: SEMQL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty

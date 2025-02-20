@@ -1,0 +1,9 @@
+_package: entities.Product.validations
+_type: SemQLValidation
+_name: ValidateFamilySubFamily
+entity: entities.Product.Product
+label: Subfamily must belong to selected family
+description: Select an item from the list of available subfamilies within the family
+condition: SubFamily.FID_Family = FID_Family
+validationScope: PRE_CONSO
+validationLabel: ''

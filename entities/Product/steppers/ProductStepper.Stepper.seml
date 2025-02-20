@@ -1,0 +1,899 @@
+_package: entities.Product.steppers
+_type: Stepper
+_name: ProductStepper
+description: Complex user experience for creating products with guided data entry.
+  Editing does not expose items.
+iconUrl: images://mdi/package-variant.svg
+label: Product Authoring
+rootCollectionStep: entities.Product.steppers.ProductStepper.Products
+entity: entities.Product.Product
+stepperFinishValidations:
+  - _type: StepperFinishValidation
+    attribute: entities.Product.Product.Description
+    onStepperFinish: WARN
+    validationType: MANDATORY
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: LOV
+    attribute: entities.Product.Product.ClosureType
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: MANDATORY
+    attribute: references.ItemImageHasItem.Item
+  - _type: StepperFinishValidation
+    onStepperFinish: SKIP
+    validationType: MANDATORY
+    attribute: entities.Product.Product.CareInstructions
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: MANDATORY
+    attribute: references.ProductHasSubFamily.SubFamily
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: CHECK
+    validator: entities.Product.validations.ValidateFamilySubFamily
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: LOV
+    attribute: entities.Item.Item.Color
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: MANDATORY
+    attribute: references.ItemHasProduct.Product
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: MANDATORY
+    attribute: references.ItemHasSize.Size
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: LOV
+    attribute: entities.Product.Product.Origin
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: FOREIGN
+    attribute: references.ProductHasBrand.Brand
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: MANDATORY
+    attribute: entities.Product.Product.Material
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: MANDATORY
+    attribute: entities.Item.Item.Color
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: FOREIGN
+    attribute: references.ProductHasFamily.Family
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: MANDATORY
+    attribute: entities.Product.Product.ImageURL
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: MANDATORY
+    attribute: entities.Product.Product.Origin
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: FOREIGN
+    attribute: references.ItemHasProduct.Product
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: MANDATORY
+    attribute: references.ProductHasFamily.Family
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: MANDATORY
+    attribute: references.ProductHasBrand.Brand
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: FOREIGN
+    attribute: references.ProductHasSubFamily.SubFamily
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: MANDATORY
+    attribute: entities.Product.Product.SalesUnit
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: LOV
+    attribute: entities.Product.Product.SalesUnit
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: MANDATORY
+    attribute: entities.Product.Product.Name
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: FOREIGN
+    attribute: references.ItemImageHasItem.Item
+  - _type: StepperFinishValidation
+    onStepperFinish: WARN
+    validationType: FOREIGN
+    attribute: references.ItemHasSize.Size
+steps:
+  - _type: CollectionStep
+    _name: Products
+    canFinishSubLevel: true
+    childDeleteType: HARD_DELETE
+    childImportModeOnParentEdit: CREATE_AND_UPDATE
+    createChildUsingManyToManyPicker: false
+    customSortEnabled: false
+    defaultDisplayType: TABLE
+    displayGridAllowed: true
+    displayListAllowed: true
+    displayTableAllowed: true
+    enableChildCopyOnParentCreate: false
+    enableChildCopyOnParentEdit: false
+    enableChildCreationOnParentCreate: true
+    enableChildCreationOnParentEdit: true
+    enableChildDeleteOnParentEdit: true
+    enableChildEditOnParentCreate: true
+    enableChildEditOnParentEdit: true
+    enableChildExport: false
+    enableChildImportOnParentCreate: true
+    enableChildImportOnParentEdit: false
+    enableChildRemoveOnParentCreate: true
+    enableChildRemoveOnParentEdit: true
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    label: Products
+    linear: true
+    manyToManyCustomSortEnabled: false
+    manyToManyDefaultDisplayType: TABLE
+    manyToManyDisplayGridAllowed: false
+    manyToManyDisplayListAllowed: false
+    manyToManyDisplayTableAllowed: false
+    manyToManyUserDefinedSortEnabled: false
+    skipToChildCreationOnParentCreate: true
+    skipToChildEditingOnParentEdit: true
+    useCustomCollectionLabel: false
+    userDefinedSortEnabled: false
+    collectionView: entities.Product.collection_views.ProductCollection
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ProductHasBrand.Brand
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: CHECK
+        validator: entities.Product.validations.ValidateFamilySubFamily
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Product.Product.Origin
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.ImageURL
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Material
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Product.Product.SalesUnit
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Description
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ProductHasSubFamily.SubFamily
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Name
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ProductHasFamily.Family
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Product.Product.ClosureType
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.CareInstructions
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ProductHasSubFamily.SubFamily
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Origin
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.SalesUnit
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ProductHasFamily.Family
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ProductHasBrand.Brand
+  - _type: FormStep
+    _name: ItemImage
+    canFinishSubLevel: true
+    enableMasterValuePicking: false
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    label: Item Image
+    formTab: entities.ItemImage.forms.ItemImageBrowsingForm.ItemImage
+    parentCollectionStep: entities.Product.steppers.ProductStepper.Images
+    formStepValidations:
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: references.ItemImageHasItem.Item
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: FOREIGN
+        attribute: references.ItemImageHasItem.Item
+    referenceFormFieldConfigs:
+      - enableCreateReference: false
+        enableUserSort: true
+        fdnFormField: entities.ItemImage.forms.ItemImageBrowsingForm.FDN_Item
+        referencePickerType: AUTO_COMPLETE
+        referencePickerCollectionView: entities.Item.collection_views.ItemCollection
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ItemImageHasItem.Item
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ItemImageHasItem.Item
+  - _type: FormStep
+    _name: GeneralInformation
+    canFinishSubLevel: false
+    enableMasterValuePicking: false
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    label: General Information
+    formTab: entities.Product.forms.ProductEditingForm.GeneralInformation
+    parentCollectionStep: entities.Product.steppers.ProductStepper.Products
+    formStepValidations:
+      - _type: FormStepValidation
+        validationType: LOV
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: entities.Product.Product.ClosureType
+      - _type: FormStepValidation
+        validationType: LOV
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: entities.Product.Product.SalesUnit
+      - _type: FormStepValidation
+        validationType: LOV
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: entities.Product.Product.Origin
+      - _type: FormStepValidation
+        validationType: CHECK
+        executedOnDataChange: true
+        executedOnFormOpen: true
+        validator: entities.Product.validations.ValidateFamilySubFamily
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: entities.Product.Product.Material
+      - _type: FormStepValidation
+        validationType: FOREIGN
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: references.ProductHasBrand.Brand
+      - _type: FormStepValidation
+        validationType: FOREIGN
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: references.ProductHasFamily.Family
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: entities.Product.Product.CareInstructions
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: entities.Product.Product.Name
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: entities.Product.Product.Description
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: references.ProductHasSubFamily.SubFamily
+      - _type: FormStepValidation
+        validationType: FOREIGN
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: references.ProductHasSubFamily.SubFamily
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: entities.Product.Product.SalesUnit
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: references.ProductHasFamily.Family
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: entities.Product.Product.ImageURL
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: references.ProductHasBrand.Brand
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: entities.Product.Product.Origin
+    referenceFormFieldConfigs:
+      - enableCreateReference: false
+        enableUserSort: true
+        fdnFormField: entities.Product.forms.ProductEditingForm.FDN_Brand
+        referencePickerType: COLLECTION
+        referencePickerCollectionView: entities.Brand.collection_views.BrandCollectionPicker
+        referencePickerSearchTypeConfigs:
+          - searchType: BY_FORM
+            enabled: false
+          - searchType: ADVANCED
+            enabled: false
+          - searchType: SEMQL
+            enabled: false
+          - searchType: TEXT
+            enabled: false
+      - enableCreateReference: false
+        enableUserSort: true
+        referencePickerType: AUTO_COMPLETE
+        fdnFormField: entities.Product.forms.ProductEditingForm.FDN_Family
+        referencePickerCollectionView: entities.Family.collection_views.FamilyCollection
+      - enableCreateReference: false
+        enableUserSort: true
+        referenceFilter: Record.FID_Family = Referenced.FID_Family
+        referencePickerType: AUTO_COMPLETE
+        fdnFormField: entities.Product.forms.ProductEditingForm.FDN_SubFamily
+        referencePickerCollectionView: entities.SubFamily.collection_views.SubFamilyCollection
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.SalesUnit
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: FOREIGN
+        attribute: references.ProductHasFamily.Family
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.ImageURL
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Origin
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: FOREIGN
+        attribute: references.ProductHasSubFamily.SubFamily
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.CareInstructions
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Material
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Product.Product.ClosureType
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: references.ProductHasFamily.Family
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: CHECK
+        validator: entities.Product.validations.ValidateFamilySubFamily
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Name
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Product.Product.SalesUnit
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Product.Product.Origin
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: references.ProductHasSubFamily.SubFamily
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Description
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: references.ProductHasBrand.Brand
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: FOREIGN
+        attribute: references.ProductHasBrand.Brand
+  - _type: FormStep
+    _name: AdditionalAttributes
+    canFinishSubLevel: true
+    enableMasterValuePicking: false
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    label: Additional Attributes
+    formTab: entities.Product.forms.ProductEditingForm.AdditionalAttributes
+    parentCollectionStep: entities.Product.steppers.ProductStepper.Products
+    formStepValidations:
+      - _type: FormStepValidation
+        validationType: FOREIGN
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: references.ProductHasBrand.Brand
+      - _type: FormStepValidation
+        validationType: LOV
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: entities.Product.Product.SalesUnit
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: references.ProductHasBrand.Brand
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        attribute: entities.Product.Product.ImageURL
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: LOV
+        attribute: entities.Product.Product.Origin
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: FOREIGN
+        attribute: references.ProductHasSubFamily.SubFamily
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: CHECK
+        validator: entities.Product.validations.ValidateFamilySubFamily
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: FOREIGN
+        attribute: references.ProductHasFamily.Family
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Name
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: entities.Product.Product.SalesUnit
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: references.ProductHasSubFamily.SubFamily
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: entities.Product.Product.CareInstructions
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Origin
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: LOV
+        attribute: entities.Product.Product.ClosureType
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Material
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: references.ProductHasFamily.Family
+      - _type: FormStepValidation
+        executedOnDataChange: false
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Description
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ProductHasFamily.Family
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Product.Product.ClosureType
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Origin
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ProductHasFamily.Family
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ProductHasSubFamily.SubFamily
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Product.Product.SalesUnit
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.CareInstructions
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Description
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ProductHasBrand.Brand
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Product.Product.Origin
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Material
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ProductHasBrand.Brand
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.ImageURL
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ProductHasSubFamily.SubFamily
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Name
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.SalesUnit
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: CHECK
+        validator: entities.Product.validations.ValidateFamilySubFamily
+  - _type: CollectionStep
+    _name: Items
+    canFinishSubLevel: true
+    childDeleteType: HARD_DELETE
+    childImportModeOnParentEdit: CREATE_AND_UPDATE
+    createChildUsingManyToManyPicker: false
+    customSortEnabled: false
+    defaultDisplayType: TABLE
+    displayGridAllowed: true
+    displayListAllowed: true
+    displayTableAllowed: true
+    enableChildCopyOnParentCreate: false
+    enableChildCopyOnParentEdit: false
+    enableChildCreationOnParentCreate: true
+    enableChildCreationOnParentEdit: true
+    enableChildDeleteOnParentEdit: true
+    enableChildEditOnParentCreate: true
+    enableChildEditOnParentEdit: true
+    enableChildExport: false
+    enableChildImportOnParentCreate: false
+    enableChildImportOnParentEdit: false
+    enableChildRemoveOnParentCreate: true
+    enableChildRemoveOnParentEdit: true
+    enabledOnParentCreate: true
+    enabledOnParentEdit: false
+    formFieldsMode: AUTO
+    label: Items
+    linear: true
+    manyToManyCustomSortEnabled: false
+    manyToManyDefaultDisplayType: TABLE
+    manyToManyDisplayGridAllowed: false
+    manyToManyDisplayListAllowed: false
+    manyToManyDisplayTableAllowed: false
+    manyToManyUserDefinedSortEnabled: false
+    skipToChildCreationOnParentCreate: true
+    skipToChildEditingOnParentEdit: false
+    useCustomCollectionLabel: false
+    userDefinedSortEnabled: false
+    collectionView: entities.Item.collection_views.ItemCollection
+    oneToManyReference: references.ItemHasProduct
+    parentCollectionStep: entities.Product.steppers.ProductStepper.Products
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ProductHasFamily.Family
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Name
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.ImageURL
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ItemHasSize.Size
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.SalesUnit
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Material
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ItemHasProduct.Product
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Item.Item.Color
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ProductHasBrand.Brand
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: CHECK
+        validator: entities.Product.validations.ValidateFamilySubFamily
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ProductHasBrand.Brand
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Product.Product.ClosureType
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Product.Product.SalesUnit
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Description
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ItemHasProduct.Product
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Product.Product.Origin
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.Origin
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ProductHasSubFamily.SubFamily
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ProductHasFamily.Family
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ItemHasSize.Size
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Item.Item.Color
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Product.Product.CareInstructions
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ProductHasSubFamily.SubFamily
+  - _type: FormStep
+    _name: Item
+    canFinishSubLevel: true
+    enableMasterValuePicking: false
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    label: Item
+    formTab: entities.Item.forms.ItemEditingForm.Item
+    parentCollectionStep: entities.Product.steppers.ProductStepper.Items
+    formStepValidations:
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: references.ItemHasProduct.Product
+      - _type: FormStepValidation
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        validationType: FOREIGN
+        attribute: references.ItemHasProduct.Product
+      - _type: FormStepValidation
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        validationType: LOV
+        attribute: entities.Item.Item.Color
+      - _type: FormStepValidation
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: entities.Item.Item.Color
+      - _type: FormStepValidation
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        validationType: FOREIGN
+        attribute: references.ItemHasSize.Size
+      - _type: FormStepValidation
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        validationType: MANDATORY
+        attribute: references.ItemHasSize.Size
+    referenceFormFieldConfigs:
+      - enableCreateReference: false
+        enableUserSort: true
+        referenceFilter: Record.Product.FID_Family = Referenced.FID_Family
+        referencePickerType: AUTO_COMPLETE
+        fdnFormField: entities.Item.forms.ItemEditingForm.FDN_Size
+        referencePickerCollectionView: entities.Size.collection_views.SizeCollection
+      - enableCreateReference: false
+        enableUserSort: true
+        referencePickerType: AUTO_COMPLETE
+        fdnFormField: entities.Item.forms.ItemEditingForm.FDN_Product
+        referencePickerCollectionView: entities.Product.collection_views.ProductCollectionErrors
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: FOREIGN
+        attribute: references.ItemHasSize.Size
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: references.ItemHasProduct.Product
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: entities.Item.Item.Color
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: FOREIGN
+        attribute: references.ItemHasProduct.Product
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: LOV
+        attribute: entities.Item.Item.Color
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: references.ItemHasSize.Size
+  - _type: CollectionStep
+    _name: Images
+    canFinishSubLevel: true
+    childDeleteType: HARD_DELETE
+    childImportModeOnParentEdit: CREATE_AND_UPDATE
+    createChildUsingManyToManyPicker: false
+    customSortEnabled: false
+    defaultDisplayType: TABLE
+    displayGridAllowed: true
+    displayListAllowed: true
+    displayTableAllowed: true
+    enableChildCopyOnParentCreate: true
+    enableChildCopyOnParentEdit: true
+    enableChildCreationOnParentCreate: true
+    enableChildCreationOnParentEdit: true
+    enableChildDeleteOnParentEdit: true
+    enableChildEditOnParentCreate: true
+    enableChildEditOnParentEdit: true
+    enableChildExport: false
+    enableChildImportOnParentCreate: false
+    enableChildImportOnParentEdit: false
+    enableChildRemoveOnParentCreate: true
+    enableChildRemoveOnParentEdit: true
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    label: Images
+    linear: true
+    manyToManyCustomSortEnabled: false
+    manyToManyDefaultDisplayType: TABLE
+    manyToManyDisplayGridAllowed: false
+    manyToManyDisplayListAllowed: false
+    manyToManyDisplayTableAllowed: false
+    manyToManyUserDefinedSortEnabled: false
+    skipToChildCreationOnParentCreate: true
+    skipToChildEditingOnParentEdit: true
+    useCustomCollectionLabel: false
+    userDefinedSortEnabled: false
+    collectionView: entities.ItemImage.collection_views.ItemImageCollection
+    oneToManyReference: references.ItemImageHasItem
+    parentCollectionStep: entities.Product.steppers.ProductStepper.Items
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ItemHasSize.Size
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: entities.Item.Item.Color
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ItemImageHasItem.Item
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ItemHasSize.Size
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ItemHasProduct.Product
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: FOREIGN
+        attribute: references.ItemHasProduct.Product
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: LOV
+        attribute: entities.Item.Item.Color
+      - _type: StepTransitionValidation
+        onStepExit: SKIP
+        validationType: MANDATORY
+        attribute: references.ItemImageHasItem.Item
+
+

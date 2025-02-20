@@ -1,0 +1,72 @@
+_package: entities.Brand.steppers
+_type: Stepper
+_name: EditBrands
+label: Edit Brands
+entity: entities.Brand.Brand
+rootCollectionStep: entities.Brand.steppers.EditBrands.Brands
+stepperFinishValidations:
+  - _type: StepperFinishValidation
+    onStepperFinish: SKIP
+    validationType: MANDATORY
+    attribute: entities.Brand.Brand.Name
+steps:
+  - _type: CollectionStep
+    _name: Brands
+    label: Brands
+    canFinishSubLevel: true
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    childDeleteType: HARD_DELETE
+    childImportModeOnParentEdit: CREATE_AND_UPDATE
+    createChildUsingManyToManyPicker: false
+    customSortEnabled: false
+    defaultDisplayType: TABLE
+    displayGridAllowed: true
+    displayListAllowed: true
+    displayTableAllowed: true
+    enableChildCopyOnParentCreate: false
+    enableChildCopyOnParentEdit: false
+    enableChildCreationOnParentCreate: true
+    enableChildCreationOnParentEdit: true
+    enableChildDeleteOnParentEdit: true
+    enableChildEditOnParentCreate: true
+    enableChildEditOnParentEdit: true
+    enableChildExport: false
+    enableChildImportOnParentCreate: true
+    enableChildImportOnParentEdit: false
+    enableChildRemoveOnParentCreate: true
+    enableChildRemoveOnParentEdit: true
+    linear: true
+    manyToManyCustomSortEnabled: false
+    manyToManyDefaultDisplayType: TABLE
+    manyToManyDisplayGridAllowed: false
+    manyToManyDisplayListAllowed: false
+    manyToManyDisplayTableAllowed: false
+    manyToManyUserDefinedSortEnabled: false
+    userDefinedSortEnabled: false
+    skipToChildCreationOnParentCreate: true
+    skipToChildEditingOnParentEdit: true
+    useCustomCollectionLabel: false
+    collectionView: entities.Brand.collection_views.BrandCollection
+    formFieldsMode: AUTO
+    stepTransitionValidations:
+      - _type: StepTransitionValidation
+        onStepExit: BLOCK
+        validationType: MANDATORY
+        attribute: entities.Brand.Brand.Name
+  - _type: FormStep
+    _name: Brand
+    label: Brand
+    canFinishSubLevel: true
+    enableMasterValuePicking: false
+    enabledOnParentCreate: true
+    enabledOnParentEdit: true
+    formFieldsMode: AUTO
+    formTab: entities.Brand.forms.BrandEditingForm.Brand
+    parentCollectionStep: entities.Brand.steppers.EditBrands.Brands
+    formStepValidations:
+      - _type: FormStepValidation
+        validationType: MANDATORY
+        executedOnDataChange: true
+        executedOnFormOpen: false
+        attribute: entities.Brand.Brand.Name

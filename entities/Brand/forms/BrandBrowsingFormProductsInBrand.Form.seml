@@ -1,0 +1,37 @@
+_package: entities.Brand.forms
+_type: Form
+_name: BrandBrowsingFormProductsInBrand
+default: false
+entity: entities.Brand.Brand
+formCollections:
+  - _name: ProductsCollection
+    _type: FormCollection
+    label: Products in Brand
+    pluralLabel: Products in Brand
+    displayRecordCount: ALWAYS
+    documentationInterpreter: LITERAL
+    enableUserDefinedSort: true
+    filter: ''
+    gridAllowed: true
+    listAllowed: true
+    posInParent: 0
+    sortExpression: Name
+    tableAllowed: true
+    transitionPath: Products
+    useCustomLabel: true
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    collection: entities.Product.collection_views.ProductCollection
+    parentFormContainer: entities.Brand.forms.BrandBrowsingFormProductsInBrand.Products
+    targetEntity: entities.Product.Product
+formContainers:
+  - _type: FormTab
+    _name: Products
+    label: Products
+    posInParent: 0
+    iconUrl: images://mdi/package-variant.svg
+    displayFormTabAs: ICON_LABEL
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    documentation: ''
+    documentationInterpreter: LITERAL

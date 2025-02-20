@@ -1,0 +1,28 @@
+_package: references
+_type: Reference
+_name: ItemHasSize
+brokenValidationLabel: ''
+deletePropagation: RESTRICT
+fromNavigable: true
+fromRoleLabel: Item
+fromRoleName: Item
+fromRolePluralLabel: Items
+label: Item Sizes
+mandatoryValidationLabel: ''
+oneToMany: true
+physicalName: ITEM_SIZES
+splitDuplicatePropagation: NONE
+toNavigable: true
+toRoleLabel: Size
+toRoleName: Size
+toRolePhysicalName: ITEM_SIZE
+validationScope: PRE_CONSO
+fromEntity: entities.Item.Item
+toEntity: entities.Size.Size
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Size
+  label: Size
+  physicalName: ITEM_SIZE
+  searchable: true
+  entity: entities.Item.Item

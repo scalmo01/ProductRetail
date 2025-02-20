@@ -1,0 +1,231 @@
+_package: workflows
+_type: Workflow
+_name: AddProduct
+label: Add Product
+workflowAdminRole: DataSteward
+rootEntities:
+  - entity: entities.Product.Product
+    _type: DataAuthoringRootEntityDefinition
+    _name: Product
+    cardinality: SINGLE_RECORD
+    semQLAlias: Product
+    displayCard: entities.Product.display_cards.ProductDisplayCard
+    childEntities:
+      - roleName: Items
+        childEntities:
+          - roleName: Images
+            childEntities: []
+steps:
+  - _type: StartEvent
+    _name: Start
+    position:
+      x: -480
+      y: -80
+    label: Start
+    initiatorRequiredRole: BusinessUser
+    defaultPriority: NORMAL
+    startupContext:
+      contextType: START_FROM_NOTHING
+      selectionSourceType: GOLDEN_DATA
+    startupParameters:
+      attachmentParamRequired: false
+      attachmentParamSupported: false
+      commentParamRequired: false
+      commentParamSupported: false
+      descriptionParamSupported: false
+      dueDateParamRequired: false
+      dueDateParamSupported: false
+      nextTaskAssigneeRequired: false
+      nextTaskAssigneeSupported: false
+      priorityParamSupported: false
+      showWaitDialog: true
+    transition:
+      _type: StartEventTransition
+      _name: outgoing
+      labelDistance: 0.5
+      labelOffset: 0.0
+      toStep: workflows.AddProduct.CreateProduct
+  - _type: EndEvent
+    _name: End
+    position:
+      x: 440
+      y: -80
+  - _type: UserTask
+    _name: CreateProduct
+    label: Create Product
+    icon: images://mdi/account-edit.svg
+    position:
+      x: -270
+      y: -80
+    application: applications.ProductRetailMDM
+    assigneeRequiredRole: BusinessUser
+    assigneeCondition: Username=UserTaskInstance.StepInstance.WorkflowInstance.InitiatorName
+    assigneeCanRelease: true
+    taskType: DATA_AUTHORING
+    entity: entities.Product.Product
+    stepper: entities.Product.steppers.ProductStepper
+    myTasksConfiguration:
+      collection: entities.Product.collection_views.ProductCollection
+    enableCandidateNotifications: true
+    enableAssigneeNotifications: true
+    transitions:
+      - _type: UserTaskTransition
+        _name: SendToReview
+        label: Send To Review
+        toStep: workflows.AddProduct.ApproveProduct
+        labelDistance: 0.5
+        labelOffset: -10
+        userTaskCompletionRequired: true
+        behaviorOnTransition: KEEP_DATA
+        showWaitDialog: true
+        transitionParameters:
+          nextTaskAssigneeSupported: false
+          nextTaskAssigneeRequired: false
+          descriptionParamSupported: true
+          commentParamSupported: true
+          commentParamRequired: false
+          priorityParamSupported: true
+          dueDateParamSupported: false
+          dueDateParamRequired: false
+          attachmentParamSupported: true
+          attachmentParamRequired: false
+      - _type: UserTaskTransition
+        _name: Cancel
+        label: Cancel
+        toStep: workflows.AddProduct.End
+        labelDistance: 0.4988531702381309
+        labelOffset: -10
+        bendPoints:
+          - x: 0
+            y: -120
+          - x: 710
+            y: -120
+        userTaskCompletionRequired: true
+        behaviorOnTransition: KEEP_DATA
+        showWaitDialog: true
+        transitionParameters:
+          nextTaskAssigneeSupported: false
+          nextTaskAssigneeRequired: false
+          descriptionParamSupported: false
+          commentParamSupported: true
+          commentParamRequired: false
+          priorityParamSupported: false
+          dueDateParamSupported: false
+          dueDateParamRequired: false
+          attachmentParamSupported: true
+          attachmentParamRequired: false
+  - _type: UserTask
+    _name: ApproveProduct
+    label: Approve Product
+    icon: images://mdi/account-check.svg
+    position:
+      x: 50
+      y: -80
+    application: applications.ProductRetailMDM
+    assigneeRequiredRole: DataSteward
+    assigneeCanRelease: true
+    taskType: DATA_AUTHORING
+    entity: entities.Product.Product
+    stepper: entities.Product.steppers.ProductStepper
+    myTasksConfiguration:
+      collection: entities.Product.collection_views.ProductCollection
+    enableCandidateNotifications: true
+    enableAssigneeNotifications: true
+    transitions:
+      - _type: UserTaskTransition
+        _name: SaveToxDM
+        label: Save To xDM
+        toStep: workflows.AddProduct.SubmitData
+        userTaskCompletionRequired: true
+        behaviorOnTransition: KEEP_DATA
+        labelDistance: 0.49645390070921985
+        labelOffset: -10
+        showWaitDialog: true
+        transitionParameters:
+          nextTaskAssigneeSupported: false
+          nextTaskAssigneeRequired: false
+          descriptionParamSupported: false
+          commentParamSupported: true
+          commentParamRequired: false
+          priorityParamSupported: false
+          dueDateParamSupported: false
+          dueDateParamRequired: false
+          attachmentParamSupported: true
+          attachmentParamRequired: false
+      - _type: UserTaskTransition
+        _name: SendBackForCorrection
+        label: Send Back For Correction
+        toStep: workflows.AddProduct.CreateProduct
+        labelDistance: 0.5
+        labelOffset: 10
+        bendPoints:
+          - x: -40
+            y: 130
+          - x: -320
+            y: 130
+        userTaskCompletionRequired: true
+        behaviorOnTransition: KEEP_DATA
+        showWaitDialog: true
+        transitionParameters:
+          nextTaskAssigneeSupported: false
+          nextTaskAssigneeRequired: false
+          descriptionParamSupported: false
+          commentParamSupported: true
+          commentParamRequired: true
+          priorityParamSupported: false
+          dueDateParamSupported: false
+          dueDateParamRequired: false
+          attachmentParamSupported: true
+          attachmentParamRequired: false
+      - _type: UserTaskTransition
+        _name: DiscardProduct
+        label: Discard Product
+        toStep: workflows.AddProduct.End
+        labelDistance: 0.5166578563850858
+        labelOffset: -10
+        bendPoints:
+          - x: 80
+            y: 130
+          - x: 390
+            y: 130
+        userTaskCompletionRequired: true
+        behaviorOnTransition: KEEP_DATA
+        showWaitDialog: true
+        transitionParameters:
+          nextTaskAssigneeSupported: false
+          nextTaskAssigneeRequired: false
+          descriptionParamSupported: false
+          commentParamSupported: true
+          commentParamRequired: false
+          priorityParamSupported: false
+          dueDateParamSupported: false
+          dueDateParamRequired: false
+          attachmentParamSupported: true
+          attachmentParamRequired: false
+  - _type: Automation
+    _name: SubmitData
+    label: Submit Data
+    position:
+      x: 300
+      y: -80
+    type: SUBMIT
+    deleteType: SOFT_DELETE
+    integrationJob: model_jobs.ALL
+    submitUserExpression: WorkflowInstance.InitiatorName
+    recipientMaxCount: 1000
+    contentType: HTML_PREFORMATTED
+    failOnError: true
+    transition:
+      _type: AutomationTransition
+      _name: outgoing
+      label: Outgoing
+      toStep: workflows.AddProduct.End
+      labelDistance: 0.5
+      labelOffset: 0
+generalProperties:
+  attachmentMaxFileCount: 5
+  attachmentMaxFileSize: 10000
+  attachmentMimeTypes: '*'
+retentionPolicy:
+  retentionTimeUnit: DAYS
+  retentionType: FOREVER

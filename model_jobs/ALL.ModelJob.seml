@@ -1,0 +1,73 @@
+_package: model_jobs
+_type: ModelJob
+_name: ALL
+jobType: INTEGRATION
+queueName: Default
+jobParams:
+  - _name: V_USER_ROLES
+    _type: ModelJobParam
+    value: ''
+modelTasks:
+  - entity: entities.Item.Item
+    _type: ModelJobTask
+    _name: Item
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - entity: entities.Brand.Brand
+    _type: ModelJobTask
+    _name: Brand
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - entity: entities.SubFamily.SubFamily
+    _type: ModelJobTask
+    _name: SubFamily
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - entity: entities.Size.Size
+    _type: ModelJobTask
+    _name: Size
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - entity: entities.Product.Product
+    _type: ModelJobTask
+    _name: Product
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - entity: entities.ItemImage.ItemImage
+    _type: ModelJobTask
+    _name: ItemImage
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - entity: entities.Family.Family
+    _type: ModelJobTask
+    _name: Family
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true

@@ -1,0 +1,25 @@
+_package: entities.Product.search_forms
+_type: SearchForm
+_name: ProductBySize
+label: Product By Size
+semQlCondition: ANY Items HAVE ( FID_Size = :SEARCH_PARAM_SIZE )
+entity: entities.Product.Product
+searchParameters:
+  - _name: Size
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_SIZE
+    boundSelectExpression: ID
+    displayCount: false
+    displayType: VALUE_PICKER
+    label: Size
+    length: 128
+    lovDisplayMode: LABEL
+    lovSortMode: LABEL
+    precision: 0
+    primaryTextExpression: FDN_Family || ' ' || SizeUS || ' (EU ' || SizeEU || ')'
+    scale: 0
+    sortByCount: NO
+    sortExpression: ID
+    useDistinct: false
+    dataType: String
+    lookupEntity: entities.Size.Size

@@ -1,0 +1,6 @@
+_type: Model
+_name: ProductRetail
+label: Product Retail
+description: Product Retail Model
+modelConfiguration:
+  type: POSTGRESQL

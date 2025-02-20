@@ -1,0 +1,28 @@
+_package: references
+_type: Reference
+_name: ItemHasProduct
+brokenValidationLabel: ''
+deletePropagation: CASCADE
+fromNavigable: true
+fromRoleLabel: Item
+fromRoleName: Items
+fromRolePluralLabel: Items
+label: Item Has Product
+mandatoryValidationLabel: ''
+oneToMany: true
+physicalName: ITEM_HAS_PRODUCT
+splitDuplicatePropagation: NONE
+toNavigable: true
+toRoleLabel: Product
+toRoleName: Product
+toRolePhysicalName: PRODUCT
+validationScope: PRE_CONSO
+fromEntity: entities.Item.Item
+toEntity: entities.Product.Product
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Product
+  label: Product
+  physicalName: PRODUCT
+  searchable: true
+  entity: entities.Item.Item

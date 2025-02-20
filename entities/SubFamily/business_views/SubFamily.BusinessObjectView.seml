@@ -1,0 +1,50 @@
+_package: entities.SubFamily.business_views
+_type: BusinessView
+_name: SubFamily
+entity: entities.SubFamily.SubFamily
+displayRootNodeAs: ICON_LABEL
+enableHierarchyView: false
+filter: 1 = 1
+iconUrl: images://gs-retail/hierarchy-subfamily.svg
+label: SubFamily
+rootDescription: ''
+rootLabel: Subfamily
+rootPluralLabel: Subfamilies
+useHierarchyOnOpen: false
+visible: true
+rootBusinessViewEntity: entities.SubFamily.business_views.SubFamily.SubFamily
+businessViewEntities:
+  - entity: entities.SubFamily.SubFamily
+    _type: BusinessViewEntity
+    _name: SubFamily
+    displayRecordCount: NEVER
+    enableUserDefinedSort: true
+    gridAllowed: true
+    listAllowed: true
+    outlineVisible: true
+    overrideDefaultSort: false
+    sortExpression: ''
+    tableAllowed: true
+    collection: entities.SubFamily.collection_views.SubFamilyCollection
+    form: entities.SubFamily.forms.SubFamilyEditAndBrowsing
+    businessEntitySearchConfigs:
+      - _name: SemqlConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: SEMQL
+        enabled: true
+      - _name: FormConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: BY_FORM
+        enabled: true
+      - _name: AdvancedConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: ADVANCED
+        enabled: true
+      - _name: TextConfig
+        _type: BusinessEntitySearchTypeConfig
+        searchType: TEXT
+        enabled: true
+    referenceAttributeNavigationConfigs:
+      - formField: entities.SubFamily.forms.SubFamilyEditAndBrowsing.FDN_Family
+        form: entities.Family.forms.FamilyBrowsingForm
+        navigationMode: MODAL_FORM

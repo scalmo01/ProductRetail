@@ -1,0 +1,51 @@
+_package: list_of_values
+_type: LOVType
+_name: StandardColors
+label: Standard Colors
+description: ''
+validationLabel: ''
+length: 20
+lengthModifiable: false
+lovValues:
+  - label: Red
+    description: ''
+    code: Red
+  - label: Purple
+    description: ''
+    code: Purple
+  - label: Grey
+    description: ''
+    code: Grey
+  - label: Indigo
+    description: ''
+    code: Indigo
+  - label: Black
+    description: ''
+    code: Black
+  - label: Custom
+    description: ''
+    code: Custom
+  - label: Green
+    description: ''
+    code: Green
+  - label: Orange
+    description: ''
+    code: Orange
+  - label: White
+    description: ''
+    code: White
+  - label: Brown
+    description: ''
+    code: Brown
+  - label: Pink
+    description: ''
+    code: Pink
+  - label: Yellow
+    description: ''
+    code: Yellow
+  - label: Blue
+    description: ''
+    code: Blue
+  - label: Violet
+    description: ''
+    code: Violet

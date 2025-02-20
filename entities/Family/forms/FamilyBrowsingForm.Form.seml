@@ -1,0 +1,425 @@
+_package: entities.Family.forms
+_type: Form
+_name: FamilyBrowsingForm
+default: true
+entity: entities.Family.Family
+formContainers:
+  - _type: FormContainer
+    _name: Container23
+    posInParent: 0
+    layoutDirection: ROW
+    parentFormContainer: entities.Family.forms.FamilyBrowsingForm.Family
+  - _type: FormTab
+    _name: Family
+    label: Family
+    posInParent: 0
+    visibleValue: '1'
+    displayFormTabAs: ICON_LABEL
+    documentation: ''
+    documentationInterpreter: LITERAL
+    iconUrl: images://mdi/people.svg
+    visibleValueInterpreter: LITERAL
+  - _type: FormContainer
+    _name: Container35
+    layoutDirection: COLUMN
+    posInParent: 3
+    parentFormContainer: entities.Family.forms.FamilyBrowsingForm.Container23
+  - _type: FormContainer
+    _name: Container36
+    layoutDirection: COLUMN
+    posInParent: 6
+    parentFormContainer: entities.Family.forms.FamilyBrowsingForm.Container23
+formFields:
+  - _type: FormField
+    _name: ImageURL
+    dataType: STRING
+    componentName: semTextField
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 2
+    useCustomLabel: false
+    value: '1'
+    visibleValueInterpreter: LITERAL
+    componentProperties:
+      - _name: multilineMaxLines
+        dataType: DECIMAL
+        value: '3'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMinLines
+        dataType: DECIMAL
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isMultiline
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isCharCounterVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+    parentFormContainer: entities.Family.forms.FamilyBrowsingForm.Container35
+  - _type: FormField
+    _name: Name
+    componentName: semTextField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 0
+    useCustomLabel: false
+    value: Name
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    componentProperties:
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isCharCounterVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isMultiline
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMaxLines
+        dataType: DECIMAL
+        value: '3'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMinLines
+        dataType: DECIMAL
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+    parentFormContainer: entities.Family.forms.FamilyBrowsingForm.Container35
+  - _type: FormField
+    _name: ID
+    componentName: semIdField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 1
+    useCustomLabel: false
+    value: ID
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    componentProperties:
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+    parentFormContainer: entities.Family.forms.FamilyBrowsingForm.Container35
+  - _type: FormField
+    _name: Image
+    componentName: semImageField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 2
+    useCustomLabel: false
+    value: ImageURL
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    componentProperties:
+      - _name: imageMode
+        dataType: STRING
+        value: fit
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageHeight
+        dataType: STRING
+        value: '300'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageSourceType
+        dataType: STRING
+        value: url
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageAlign
+        dataType: STRING
+        value: top-left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: showFullSizeOnClick
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: fallbackImage
+        dataType: STRING
+        value: url
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+    parentFormContainer: entities.Family.forms.FamilyBrowsingForm.Container36
+  - _type: FormField
+    _name: Creator
+    componentName: semTextField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 4
+    useCustomLabel: false
+    value: Creator
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    componentProperties:
+      - _name: isMultiline
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMinLines
+        dataType: DECIMAL
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMaxLines
+        dataType: DECIMAL
+        value: '3'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isCharCounterVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+    parentFormContainer: entities.Family.forms.FamilyBrowsingForm.Container35
+  - _type: FormField
+    _name: CreationDate
+    componentName: semTextField
+    description: ''
+    documentation: ''
+    documentationInterpreter: LITERAL
+    posInParent: 3
+    useCustomLabel: false
+    value: CreationDate
+    dataType: TIMESTAMP
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    componentProperties:
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMaxLines
+        dataType: DECIMAL
+        value: '3'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isCharCounterVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMinLines
+        dataType: DECIMAL
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isMultiline
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+    parentFormContainer: entities.Family.forms.FamilyBrowsingForm.Container35
+

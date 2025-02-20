@@ -1,0 +1,285 @@
+_package: entities.ItemImage.forms
+_type: Form
+_name: ItemImageEditingForm
+entity: entities.ItemImage.ItemImage
+default: false
+description: ''
+documentation: ''
+formContainers:
+  - _type: FormTab
+    _name: ItemImage
+    description: ''
+    displayFormTabAs: ICON_LABEL
+    documentation: ''
+    documentationInterpreter: LITERAL
+    iconUrl: images://mdi/folder-multiple-image.svg
+    label: Item Image
+    posInParent: 0
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+formFields:
+  - _type: FormField
+    _name: ID
+    componentName: semIdField
+    documentationInterpreter: LITERAL
+    posInParent: 3
+    useCustomLabel: false
+    value: ID
+    dataType: LONG_INTEGER
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.ItemImage.forms.ItemImageEditingForm.ItemImage
+    componentProperties:
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: force-read-only
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: ImageURL
+    componentName: semImageField
+    documentationInterpreter: LITERAL
+    posInParent: 2
+    useCustomLabel: false
+    value: ImageURL
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.ItemImage.forms.ItemImageEditingForm.ItemImage
+    componentProperties:
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: showFullSizeOnClick
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageAlign
+        dataType: STRING
+        value: middle-center
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageSourceType
+        dataType: STRING
+        value: url
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: fallbackImageType
+        dataType: STRING
+        value: url
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: useFloatingLabel
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageHeight
+        dataType: STRING
+        value: '300'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: imageMode
+        dataType: STRING
+        value: fit
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: FDN_Item
+    componentName: semReferenceField
+    documentationInterpreter: LITERAL
+    label: Item
+    posInParent: 4
+    useCustomLabel: true
+    value: FDN_Item
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.ItemImage.forms.ItemImageEditingForm.ItemImage
+    referencedEntity: entities.Item.Item
+    componentProperties:
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textTypography
+        dataType: STRING
+        value: body-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: force-read-only
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: useSecondaryTextInChip
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: displayType
+        dataType: STRING
+        value: chip
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: useAvatarInChip
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+  - _type: FormField
+    _name: Label
+    componentName: semTextField
+    documentationInterpreter: LITERAL
+    posInParent: 1
+    useCustomLabel: false
+    value: Label
+    dataType: STRING
+    visibleValue: '1'
+    visibleValueInterpreter: LITERAL
+    parentFormContainer: entities.ItemImage.forms.ItemImageEditingForm.ItemImage
+    componentProperties:
+      - _name: textTypography
+        dataType: STRING
+        value: display-1
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isLabelVisible
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: textAlign
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMinLines
+        dataType: DECIMAL
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: useFloatingLabel
+        dataType: BOOLEAN
+        value: '1'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: multilineMaxLines
+        dataType: DECIMAL
+        value: '3'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: authoringMode
+        dataType: STRING
+        value: auto
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isCharCounterVisible
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: helperText
+        dataType: STRING
+        value: Use descriptive and attractive labels for images
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTextAlign
+        dataType: STRING
+        value: right
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelPosition
+        dataType: STRING
+        value: left
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: isMultiline
+        dataType: BOOLEAN
+        value: '0'
+        valueInterpreter: LITERAL
+        _type: ComponentProperty
+      - _name: labelTypography
+        dataType: STRING
+        value: caption
+        valueInterpreter: LITERAL
+        _type: ComponentProperty

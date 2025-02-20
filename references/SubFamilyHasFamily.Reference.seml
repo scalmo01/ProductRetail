@@ -1,0 +1,28 @@
+_package: references
+_type: Reference
+_name: SubFamilyHasFamily
+brokenValidationLabel: ''
+deletePropagation: RESTRICT
+fromNavigable: true
+fromRoleLabel: Sub Family
+fromRoleName: SubFamily
+fromRolePluralLabel: Sub Families
+label: Sub Family Has Family
+mandatoryValidationLabel: ''
+oneToMany: true
+physicalName: SUB_FAMILY_HAS_FAMILY
+splitDuplicatePropagation: NONE
+toNavigable: true
+toRoleLabel: Family
+toRoleName: Family
+toRolePhysicalName: FAMILY
+validationScope: PRE_CONSO
+fromEntity: entities.SubFamily.SubFamily
+toEntity: entities.Family.Family
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Family
+  label: Family
+  physicalName: FAMILY
+  searchable: true
+  entity: entities.SubFamily.SubFamily
