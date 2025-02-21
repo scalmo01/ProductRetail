@@ -5,7 +5,7 @@ label: 'Scotts ScottsFamily'
 length: 128
 lovValues:
   - label: 'Scott'
-    code: 'Scott''
+    code: 'Scott'
   - label: 'Debbie'
     code: 'Debbie' 
   - label: 'Trevor'
