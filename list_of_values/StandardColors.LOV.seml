@@ -49,3 +49,6 @@ lovValues:
   - label: Violet
     description: ''
     code: Violet
+  - label: Cyan
+    description: ''
+    code: Cyan  
