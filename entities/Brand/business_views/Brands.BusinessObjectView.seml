@@ -1,7 +1,7 @@
 _package: entities.Brand.business_views
 _type: BusinessView
 _name: Brands
-label: Brands
+label: Brandies
 businessViewEntities:
   - _name: Brand
     _type: BusinessViewEntity
