@@ -1,0 +1,12 @@
+_package: list_of_values
+_type: LOVType
+_name: ScottsFamily
+label: 'Scotts ScottsFamily'
+length: 128
+lovValues:
+  - label: 'Scott'
+    code: 'Scott''
+  - label: 'Debbie'
+    code: 'Debbie' 
+  - label: 'Trevor'
+    code: 'Trevor'
