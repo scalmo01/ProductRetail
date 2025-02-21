@@ -34,7 +34,7 @@ atomicAttributes:
     lovValidationScope: PRE_CONSO
     goldenAttribute: true
     i18ned: false
-    label: Heel Height (inches)
+    label: Heel Height (Inch-es)
     length: 128
     mandatory: false
     mandatoryValidationLabel: ''
