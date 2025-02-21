@@ -10,5 +10,5 @@ lovValues:
     code: 'Debbie' 
   - label: 'Trevor'
     code: 'Trevor'
-    label: 'Rebecca'
+  - label: 'Rebecca'
     code: 'Rebecca'
