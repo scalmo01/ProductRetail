@@ -1,6 +1,6 @@
 _package: applications
 _type: Application
-_name: ProductRetailMDM
+_name: ProductRetailMDM_Rhea
 activitiesSectionEnabled: true
 applicationTitle: Product Retail MDM
 avatarImageUrl: images://gs-retail/cart-outline-blue.svg
